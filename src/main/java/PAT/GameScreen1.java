@@ -39,7 +39,7 @@ public class GameScreen1 extends javax.swing.JFrame {
         
         
         ArrayList<Button> buttons = new ArrayList<Button>();
-        buttons.add();
+    
         
         
         Random rnd = new Random();

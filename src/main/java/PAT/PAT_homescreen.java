@@ -39,7 +39,7 @@ public class PAT_homescreen extends javax.swing.JFrame {
         playbutton = new javax.swing.JButton();
         infobutton = new javax.swing.JButton();
         Closebutton = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,9 +68,9 @@ public class PAT_homescreen extends javax.swing.JFrame {
         });
         getContentPane().add(Closebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 140, 70));
 
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sebastianh\\Documents\\NetBeansProjects\\PAT_2022\\src\\main\\resources\\images\\pattest2.png")); // NOI18N
-        background.setText("jLabel2");
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 900, 540));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\user-pc\\Documents\\NetBeansProjects\\PAT_GR10\\src\\main\\resources\\images\\pattest2.png")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -130,8 +130,8 @@ public class PAT_homescreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Closebutton;
-    private javax.swing.JLabel background;
     private javax.swing.JButton infobutton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton playbutton;
     // End of variables declaration//GEN-END:variables
 }
