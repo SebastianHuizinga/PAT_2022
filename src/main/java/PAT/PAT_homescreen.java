@@ -68,7 +68,7 @@ public class PAT_homescreen extends javax.swing.JFrame {
         });
         getContentPane().add(Closebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 140, 70));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PAT/pattest2.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sebastianh\\Documents\\NetBeansProjects\\PAT_2022\\src\\main\\resources\\images\\pattest2.png")); // NOI18N
         background.setText("jLabel2");
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 900, 540));
 

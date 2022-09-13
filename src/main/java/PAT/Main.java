@@ -101,7 +101,7 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 620, 280, 90));
 
         Lovebar.setToolTipText("");
-        getContentPane().add(Lovebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 490));
+        getContentPane().add(Lovebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 490));
 
         jButton1.setText("Quit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +119,11 @@ public class Main extends javax.swing.JFrame {
             
              bar_value += 1;
              Lovebar.setValue(bar_value);
+            
+             
+               
+               
+   
              
                
              }
@@ -136,6 +141,8 @@ public class Main extends javax.swing.JFrame {
             Lovebar.setValue(bar_value);
             bar_value -= 1;
            
+            
+            
            
 
              
