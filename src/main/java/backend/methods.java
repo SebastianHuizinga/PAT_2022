@@ -4,10 +4,41 @@
  */
 package backend;
 
+import java.awt.event.ActionListener;
+import java.util.concurrent.ScheduledExecutorService;
+import javax.swing.Timer;
+
 /**
  *
  * @author Sebastianh
  */
 public class methods {
+    
+    
+    //Timer method
+    public static int Timer(int num){
+        
+        final ScheduledExecutorService scheduler =
+        
+       
+        
+        
+        
+        
+        
+        return 0;
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+  
+    
+    
+    
     
 }

@@ -7,43 +7,27 @@ package PAT;
 import java.awt.Button;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author Sebastianh
  */
 public class GameScreen1 extends javax.swing.JFrame {
-    
-    
-   
 
-    
-
-    
-    
-    
-    
+    private int birds_hit = 0;
+    private  int x_btn = 0;
+    private int y_btn = 0;
     /**
-     * 
-     * 
-     * 
-     * 
+     *
+     *
+     *
+     *
      * Creates new form GameScreen1
      */
     public GameScreen1() {
         initComponents();
-        
-        
-                
-        
-        
-        
-        ArrayList<Button> buttons = new ArrayList<Button>();
-    
-        
-        
-        Random rnd = new Random();
-        int i = rnd.nextInt(buttons.size());
+
     }
 
     /**
@@ -55,52 +39,45 @@ public class GameScreen1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        button1 = new javax.swing.JButton();
-        button2 = new javax.swing.JButton();
-        button3 = new javax.swing.JButton();
-        button4 = new javax.swing.JButton();
+        bird = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        button1.setText("jButton2");
-
-        button2.setText("jButton18");
-
-        button3.setText("jButton19");
-
-        button4.setText("jButton20");
+        bird.setText("jButton1");
+        bird.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                birdActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(236, 236, 236)
+                .addComponent(bird, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(244, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                    .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(124, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(221, Short.MAX_VALUE)
+                .addComponent(bird, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(207, 207, 207))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void birdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_birdActionPerformed
+        x_btn = (int) (Math.random() * (600 - 0) + 0);
+        y_btn = (int) (Math.random() * (400 - 0) + 0);
+        bird.setLocation(x_btn, y_btn);
+        birds_hit += 1;
+        ImageIcon image = new ImageIcon(getClass().getResource("\\NetBeansProjects\\PATGR10\\src\\main\\resources\\images\\blue.png"));
+        bird.setIcon(image);
+    }//GEN-LAST:event_birdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,9 +115,6 @@ public class GameScreen1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton button1;
-    private javax.swing.JButton button2;
-    private javax.swing.JButton button3;
-    private javax.swing.JButton button4;
+    private javax.swing.JButton bird;
     // End of variables declaration//GEN-END:variables
 }
