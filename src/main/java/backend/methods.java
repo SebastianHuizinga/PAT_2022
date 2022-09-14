@@ -4,8 +4,11 @@
  */
 package backend;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.concurrent.ScheduledExecutorService;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import javax.swing.Timer;
 
 /**
@@ -13,32 +16,41 @@ import javax.swing.Timer;
  * @author Sebastianh
  */
 public class methods {
-    
-    
-    //Timer method
-    public static int Timer(int num){
+
+    public static String Happy() throws FileNotFoundException {
+
+        File filehappy = new File("data\\happyq.txt");
+
+        Scanner sc = new Scanner(filehappy);
+        sc.useDelimiter("#");
+
+        int rand = (int) Math.random() * (5 - 0) + 0;
+        String sc_str = "";
+        int sc_int;
         
-        final ScheduledExecutorService scheduler =
-        
+        while (sc.hasNext()) {
+            Scanner scanLine = new Scanner(sc.nextLine());
+            scanLine.useDelimiter("#");
+            sc_int = scanLine.nextInt();
+         
+            
+            if (sc_int == rand) {
+                   sc_str = scanLine.next();
+                
+            }
+            
+        }
        
+          
         
         
-        
-        
-        
-        return 0;
-        
-        
-        
-        
-        
-        
-        
+        return sc_str;
+
     }
     
-  
-    
-    
-    
-    
 }
+
+//Timer method
+//public static int Timer(int num){
+//final ScheduledExecutorService scheduler = 0;
+

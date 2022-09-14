@@ -4,6 +4,8 @@
  */
 package PAT;
 
+import backend.methods;
+import java.io.FileNotFoundException;
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,7 +70,7 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        dialogue_area = new javax.swing.JTextArea();
         button1 = new javax.swing.JButton();
         button2 = new javax.swing.JButton();
         Lovebar = new javax.swing.JProgressBar();
@@ -77,12 +79,12 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        dialogue_area.setEditable(false);
+        dialogue_area.setColumns(20);
+        dialogue_area.setRows(5);
+        jScrollPane1.setViewportView(dialogue_area);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 820, 190));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 820, 190));
 
         button1.setText("PLACEHOLDER");
         button1.addActionListener(new java.awt.event.ActionListener() {
@@ -140,13 +142,26 @@ public class Main extends javax.swing.JFrame {
         
             Lovebar.setValue(bar_value);
             bar_value -= 1;
+        
+        
+        }try {
+                String text = methods.Happy();
+                
+                dialogue_area.setText(text);
+                System.out.println(text);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("error");
+            }
+         
+         
            
             
             
            
 
              
-        }
+        
        
     }//GEN-LAST:event_button2ActionPerformed
 
@@ -195,8 +210,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JProgressBar Lovebar;
     private javax.swing.JButton button1;
     private javax.swing.JButton button2;
+    private javax.swing.JTextArea dialogue_area;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
