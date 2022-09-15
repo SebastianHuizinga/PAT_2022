@@ -14,7 +14,13 @@ import java.util.Scanner;
  */
 public class methods {
 
-    public static String Happy() throws FileNotFoundException {
+    public static int Rando(int high, int low) {
+        int rando = (int) (Math.random() * (high - low) + low);
+
+        return rando;
+    }
+
+    public static String Happy(int num) throws FileNotFoundException {
 
         File filehappy = new File("data//happyq.txt");
 
@@ -30,33 +36,42 @@ public class methods {
             scanLine.useDelimiter("#");
             sc_int = scanLine.nextInt();
 
-            if (sc_int == rand) {
+            if (sc_int == num) {
                 sc_str = scanLine.next();
 
-                //File filehappy_a = new File("data//happya.txt");
-                //Scanner sc2 = new Scanner(filehappy);
-                //sc2.useDelimiter("#");
-                // String ans1 = "";
-                //String ans2 = "";
-                //int ans_num;
-                // int ansval1;
-                // int ansval2;
-                // while (sc2.hasNext()) {
-                //  Scanner scanLine2 = new Scanner(sc.nextLine());
-                //  scanLine2.useDelimiter("#");
-                // ans_num = scanLine.nextInt();
-                //  if (ans_num == rand) {
-                //    ans1 = scanLine2.next();
-                //  ansval1 = scanLine2Int.next();
-                //   ans2 = scanLine2.next();
-                //   ansval2 = scanLine2Int.next();
-                //    }
-                //   }
             }
 
         }
         return sc_str;
     }
+
+    public static String[] Happy_ans(int num) throws FileNotFoundException {
+
+        File filehappy_a = new File("data//happya.txt");
+        Scanner sc2 = new Scanner(filehappy_a);
+        sc2.useDelimiter("#");
+        String ans1 = "";
+        String ans2 = "";
+        int ans_num;
+        int ansval1;
+        int ansval2;
+        while (sc2.hasNext()) {
+            Scanner scanLine2 = new Scanner(sc2.nextLine());
+            scanLine2.useDelimiter("#");
+            ans_num = scanLine2.nextInt();
+            if (ans_num == num) {
+                ans1 = scanLine2.next();
+                ansval1 = scanLine2.nextInt();
+                ans2 = scanLine2.next();
+                ansval2 = scanLine2.nextInt();
+            }
+        }
+        String returnAns[] = {ans1, ans2};
+
+        return returnAns;
+
+    }
+
 }
 
 //Timer method

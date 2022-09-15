@@ -128,8 +128,17 @@ public class Main extends javax.swing.JFrame {
 
         }
         try {
-            String text = methods.Happy();
+            int rand = methods.Rando(6, 1);
+            String text = methods.Happy(rand);
 
+            String[] answers = methods.Happy_ans(rand);
+            String ans1 = answers[0];
+            String ans2 = answers[1];
+
+            button1.setText(ans2);
+            button2.setText(ans1);
+
+            System.out.println(text);
             dialogue_area.setText(text);;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
