@@ -20,45 +20,38 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-    
     bartracker t1;
     private int bar_value = 0;
-    
-    
+
     public Main() {
         initComponents();
         Lovebar.setOrientation(Lovebar.VERTICAL);
         t1 = new bartracker(Lovebar);
         t1.start();
-        
+
     }
-    
-    class bartracker extends Thread{
+
+    class bartracker extends Thread {
+
         JProgressBar lovebar;
-        
-        bartracker(JProgressBar lovebar){
-            
+
+        bartracker(JProgressBar lovebar) {
+
             lovebar = Lovebar;
-            
+
         }
-        
-        public void run(){
+
+        public void run() {
             int bar_max = 100;
-            int bar_min = 0; 
-            
+            int bar_min = 0;
+
             Lovebar.setMaximum(bar_min);
             Lovebar.setMaximum(bar_max);
             Lovebar.setValue(0);
-         
-       
-            
+
         }
-        
- 
-        
+
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -117,52 +110,32 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-             for (int i = 0; i < 10; i++) {
-            
-             bar_value += 1;
-             Lovebar.setValue(bar_value);
-            
-             
-               
-               
-   
-             
-               
-             }
+        for (int i = 0; i < 10; i++) {
 
+            bar_value += 1;
+            Lovebar.setValue(bar_value);
 
+        }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         for (int i = 0; i < 10; i++) {
-            
-            
-        
+
             Lovebar.setValue(bar_value);
             bar_value -= 1;
-        
-        
-        }try {
-                String text = methods.Happy();
-                
-                dialogue_area.setText(text);
-                System.out.println(text);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                System.out.println("error");
-            }
-         
-         
-           
-            
-            
-           
 
-             
-        
-       
+        }
+        try {
+            String text = methods.Happy();
+
+            dialogue_area.setText(text);;
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("error");
+        }
+
     }//GEN-LAST:event_button2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -178,7 +151,7 @@ public class Main extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

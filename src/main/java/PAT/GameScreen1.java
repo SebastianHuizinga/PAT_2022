@@ -44,9 +44,8 @@ public final class GameScreen1 extends javax.swing.JFrame {
 
     }
 
-    Toolkit tk = Toolkit.getDefaultToolkit();
-    private int x_width = (int) tk.getScreenSize().getWidth();
-    private int y_height = (int) tk.getScreenSize().getHeight();
+    private int x_width = 0;
+    private int y_height = 0;
 
     private int birds_hit = 0;
     private int x_btn = 0;
@@ -55,14 +54,23 @@ public final class GameScreen1 extends javax.swing.JFrame {
     public GameScreen1() {
         initComponents();
         cursor.setVisible(false);
+
+        x_width = getWidth();
+        y_height = getHeight();
+
         setExtendedState(MAXIMIZED_BOTH);
         this.setCursor(this.getToolkit().createCustomCursor(
                 new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB),
                 new Point(),
                 null));
 
-        Timer.setLocation(x_width / 2, y_height - 1050);
+        int timerX = clock_icon.getX() + clock_icon.getWidth() / 2 + Timer.getWidth() / 2;
+        int timerY = clock_icon.getY() + clock_icon.getHeight() / 2 + Timer.getHeight() / 2;
+
+        Timer.setLocation(timerX, timerY);
         clock_icon.setLocation(Timer.getLocation());
+
+        //clock_icon.setLocation(Timer.getLocation());
         startTimer(100);
 
     }
@@ -127,7 +135,6 @@ public final class GameScreen1 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
     private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
 
         // TODO add your handling code here:d
@@ -141,7 +148,6 @@ public final class GameScreen1 extends javax.swing.JFrame {
         Point mouse_pos = getMousePosition();
         cursor.setVisible(true);
         cursor.setLocation(mouse_pos);
-
 
     }//GEN-LAST:event_formMouseMoved
 
@@ -169,14 +175,9 @@ public final class GameScreen1 extends javax.swing.JFrame {
             Game_1_win gw = new Game_1_win();
             gw.setVisible(true);
             dispose();
-        
-            
-
 
     }//GEN-LAST:event_birdoMouseClicked
     }
-    
-    
 
     /**
      * @param args the command line arguments
@@ -185,7 +186,7 @@ public final class GameScreen1 extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
