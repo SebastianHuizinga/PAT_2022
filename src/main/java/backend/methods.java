@@ -72,6 +72,32 @@ public class methods {
 
     }
 
+    public static int[] Happy_ansval(int num) throws FileNotFoundException {
+
+        File filehappy_a = new File("data//happya.txt");
+        Scanner sc2 = new Scanner(filehappy_a);
+        sc2.useDelimiter("#");
+        int ans_num;
+        int ansval1 = 0;
+        int ansval2 = 0;
+        while (sc2.hasNext()) {
+            Scanner scanLine2 = new Scanner(sc2.nextLine());
+            scanLine2.useDelimiter("#");
+            ans_num = scanLine2.nextInt();
+
+            if (ans_num == num) {
+                String ans1 = scanLine2.next();
+                ansval1 = scanLine2.nextInt();
+                String ans2 = scanLine2.next();
+                ansval2 = scanLine2.nextInt();
+            }
+        }
+        int returnAnsval[] = {ansval1, ansval2};
+
+        return returnAnsval;
+
+    }
+
 }
 
 //Timer method

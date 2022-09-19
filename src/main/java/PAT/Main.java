@@ -6,7 +6,6 @@ package PAT;
 
 import backend.methods;
 import java.io.FileNotFoundException;
-import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JProgressBar;
@@ -22,6 +21,8 @@ public class Main extends javax.swing.JFrame {
      */
     bartracker t1;
     private int bar_value = 0;
+    private int ans_val1 = 0;
+    private int ans_val2 = 0;
 
     public Main() {
         initComponents();
@@ -45,7 +46,7 @@ public class Main extends javax.swing.JFrame {
             int bar_max = 100;
             int bar_min = 0;
 
-            Lovebar.setMaximum(bar_min);
+            Lovebar.setMinimum(bar_min);
             Lovebar.setMaximum(bar_max);
             Lovebar.setValue(0);
 
@@ -77,7 +78,7 @@ public class Main extends javax.swing.JFrame {
         dialogue_area.setRows(5);
         jScrollPane1.setViewportView(dialogue_area);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 820, 190));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 820, 190));
 
         button1.setText("PLACEHOLDER");
         button1.addActionListener(new java.awt.event.ActionListener() {
@@ -110,27 +111,13 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        for (int i = 0; i < 10; i++) {
-
-            bar_value += 1;
-            Lovebar.setValue(bar_value);
-
-        }
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button1ActionPerformed
-
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        for (int i = 0; i < 10; i++) {
-
-            Lovebar.setValue(bar_value);
-            bar_value -= 1;
-
-        }
         try {
             int rand = methods.Rando(6, 1);
+            //dialogue area
             String text = methods.Happy(rand);
+            dialogue_area.setText(text);
 
+            //button text
             String[] answers = methods.Happy_ans(rand);
             String ans1 = answers[0];
             String ans2 = answers[1];
@@ -138,8 +125,70 @@ public class Main extends javax.swing.JFrame {
             button1.setText(ans2);
             button2.setText(ans1);
 
-            System.out.println(text);
-            dialogue_area.setText(text);;
+            //button values
+            int[] ansval = methods.Happy_ansval(rand);
+            ans_val1 = ansval[0];
+            ans_val2 = ansval[1];
+
+            bar_value += ans_val1;
+
+            Lovebar.setValue(bar_value);
+            Lovebar.setValue(bar_value);
+            if (bar_value < 0) {
+                bar_value = 0;
+                Lovebar.setValue(bar_value);
+
+            }
+            if (bar_value > 100) {
+                bar_value = 100;
+                Lovebar.setValue(bar_value);
+
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("error");
+
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button1ActionPerformed
+
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+
+        try {
+            int rand = methods.Rando(6, 1);
+            //dialogue area
+            String text = methods.Happy(rand);
+            dialogue_area.setText(text);
+
+            //button text
+            String[] answers = methods.Happy_ans(rand);
+            String ans1 = answers[0];
+            String ans2 = answers[1];
+
+            button1.setText(ans2);
+            button2.setText(ans1);
+
+            //button values
+            int[] ansval = methods.Happy_ansval(rand);
+            ans_val1 = ansval[0];
+            ans_val2 = ansval[1];
+
+            bar_value += ans_val2;
+
+            Lovebar.setValue(bar_value);
+            if (bar_value < 0) {
+                bar_value = 0;
+                Lovebar.setValue(bar_value);
+
+            }
+            if (bar_value > 100) {
+                bar_value = 100;
+                Lovebar.setValue(bar_value);
+
+            }
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("error");

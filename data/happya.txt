@@ -1,5 +1,5 @@
-1#No#10#Yes#15
-2#Damn#20#yes#14
-3#Drat#45#loopies#16
-4#Lol#5#shungite#12
-5#draingang#12#doble#19
+1#No#10#Yes#-15
+2#Damn#-20#yes#14
+3#Drat#45#loopies#-16
+4#Lol#-5#shungite#12
+5#AAAAAAH#-12#doble#-19
