@@ -4,6 +4,7 @@
  */
 package PAT;
 
+import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -46,6 +47,7 @@ public final class GameScreen1 extends javax.swing.JFrame {
 
     private int x_width = 0;
     private int y_height = 0;
+    private double x_size, y_size;
 
     private int birds_hit = 0;
     private int x_btn = 0;
@@ -54,6 +56,10 @@ public final class GameScreen1 extends javax.swing.JFrame {
     public GameScreen1() {
         initComponents();
         cursor.setVisible(false);
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        x_size = screenSize.getWidth();
+        y_size = screenSize.getHeight();
 
         x_width = getWidth();
         y_height = getHeight();
@@ -85,6 +91,8 @@ public final class GameScreen1 extends javax.swing.JFrame {
         score = new javax.swing.JLabel();
         birdo = new javax.swing.JLabel();
         clock_icon = new javax.swing.JLabel();
+        birdo1 = new javax.swing.JLabel();
+        birdo2 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -118,18 +126,36 @@ public final class GameScreen1 extends javax.swing.JFrame {
         getContentPane().add(score);
         score.setBounds(30, 100, 560, 70);
 
-        birdo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/el birdo.png"))); // NOI18N
+        birdo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/birdohat.png"))); // NOI18N
         birdo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 birdoMouseClicked(evt);
             }
         });
         getContentPane().add(birdo);
-        birdo.setBounds(460, 210, 150, 150);
+        birdo.setBounds(740, 160, 150, 150);
 
         clock_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clock.png"))); // NOI18N
         getContentPane().add(clock_icon);
         clock_icon.setBounds(460, 50, 200, 90);
+
+        birdo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/birdoknight.png"))); // NOI18N
+        birdo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                birdo1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(birdo1);
+        birdo1.setBounds(230, 130, 150, 150);
+
+        birdo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/el birdo.png"))); // NOI18N
+        birdo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                birdo2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(birdo2);
+        birdo2.setBounds(460, 230, 150, 150);
 
         pack();
         setLocationRelativeTo(null);
@@ -156,10 +182,16 @@ public final class GameScreen1 extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseDragged
 
     private void birdoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_birdoMouseClicked
-        x_btn = (int) (Math.random() * ((x_width - 50) - 0) + 0);
-        y_btn = (int) (Math.random() * ((y_height - 50) - 0) + 0);
+        x_btn = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        y_btn = (int) (Math.random() * ((y_size - 50) - 0) + 0);
+        int x_btn2 = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        int y_btn2 = (int) (Math.random() * ((y_size - 50) - 0) + 0);
+        int x_btn3 = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        int y_btn3 = (int) (Math.random() * ((y_size - 50) - 0) + 0);
         birdo.setLocation(x_btn, y_btn);
-        birds_hit += 10;
+        birdo1.setLocation(x_btn2, y_btn2);
+        birdo2.setLocation(x_btn3, y_btn3);
+        birds_hit += 1;
         if (birds_hit > 0 && birds_hit < 5) {
             score.setText("GET IT! " + birds_hit + " HITS!");
         } else if (birds_hit >= 5 && birds_hit < 10) {
@@ -177,6 +209,67 @@ public final class GameScreen1 extends javax.swing.JFrame {
             dispose();
 
     }//GEN-LAST:event_birdoMouseClicked
+    }
+
+    private void birdo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_birdo1MouseClicked
+        // TODO add your handling code here:
+        x_btn = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        y_btn = (int) (Math.random() * ((y_size - 50) - 0) + 0);
+        int x_btn2 = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        int y_btn2 = (int) (Math.random() * ((y_size - 50) - 0) + 0);
+        int x_btn3 = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        int y_btn3 = (int) (Math.random() * ((y_size - 50) - 0) + 0);
+        birdo.setLocation(x_btn, y_btn);
+        birdo1.setLocation(x_btn2, y_btn2);
+        birdo2.setLocation(x_btn3, y_btn3);
+        birds_hit += 1;
+        if (birds_hit > 0 && birds_hit < 5) {
+            score.setText("GET IT! " + birds_hit + " HITS!");
+        } else if (birds_hit >= 5 && birds_hit < 10) {
+            score.setText("KEEP GOING! " + birds_hit + " HITS!");
+        } else if (birds_hit >= 10 && birds_hit < 20) {
+            score.setText("ALMOST THERE! " + birds_hit + " HITS!");
+        } else if (birds_hit >= 20 && birds_hit < 29) {
+            score.setText("THE TIME IS COMINGGG! " + birds_hit + " HITS!");
+        } else if (birds_hit == 29) {
+            score.setText("ONE MORE! " + birds_hit + " HITS!");
+        } else if (birds_hit == 30) {
+            score.setText("WOWEOWEOWEOWEOW");
+            Game_1_win gw = new Game_1_win();
+            gw.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_birdo1MouseClicked
+
+    private void birdo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_birdo2MouseClicked
+        // TODO add your handling code here:
+        x_btn = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        y_btn = (int) (Math.random() * ((y_size - 50) - 0) + 0);
+        int x_btn2 = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        int y_btn2 = (int) (Math.random() * ((y_size - 50) - 0) + 0);
+        int x_btn3 = (int) (Math.random() * ((x_size - 50) - 0) + 0);
+        int y_btn3 = (int) (Math.random() * ((y_size - 50) - 0) + 0);
+        birdo.setLocation(x_btn, y_btn);
+        birdo1.setLocation(x_btn2, y_btn2);
+        birdo2.setLocation(x_btn3, y_btn3);
+        birds_hit += 1;
+        if (birds_hit > 0 && birds_hit < 5) {
+            score.setText("GET IT! " + birds_hit + " HITS!");
+        } else if (birds_hit >= 5 && birds_hit < 10) {
+            score.setText("KEEP GOING! " + birds_hit + " HITS!");
+        } else if (birds_hit >= 10 && birds_hit < 20) {
+            score.setText("ALMOST THERE! " + birds_hit + " HITS!");
+        } else if (birds_hit >= 20 && birds_hit < 29) {
+            score.setText("THE TIME IS COMINGGG! " + birds_hit + " HITS!");
+        } else if (birds_hit == 29) {
+            score.setText("ONE MORE! " + birds_hit + " HITS!");
+        } else if (birds_hit == 30) {
+            score.setText("WOWEOWEOWEOWEOW");
+            Game_1_win gw = new Game_1_win();
+            gw.setVisible(true);
+            dispose();
+
+    }//GEN-LAST:event_birdo2MouseClicked
     }
 
     /**
@@ -217,6 +310,8 @@ public final class GameScreen1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Timer;
     private javax.swing.JLabel birdo;
+    private javax.swing.JLabel birdo1;
+    private javax.swing.JLabel birdo2;
     private javax.swing.JLabel clock_icon;
     private javax.swing.JLabel cursor;
     private javax.swing.JToggleButton jToggleButton1;

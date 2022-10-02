@@ -39,26 +39,27 @@ public class PAT_homescreen extends javax.swing.JFrame {
         playbutton = new javax.swing.JButton();
         infobutton = new javax.swing.JButton();
         Closebutton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        playbutton.setText("Play");
+        playbutton.setText("New game");
         playbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playbuttonActionPerformed(evt);
             }
         });
-        getContentPane().add(playbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 242, 320, 100));
+        getContentPane().add(playbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 230, 60));
 
-        infobutton.setText("info");
+        infobutton.setText("Info");
         infobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 infobuttonActionPerformed(evt);
             }
         });
-        getContentPane().add(infobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 320, 100));
+        getContentPane().add(infobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 230, 60));
 
         Closebutton.setText("the close button");
         Closebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +69,9 @@ public class PAT_homescreen extends javax.swing.JFrame {
         });
         getContentPane().add(Closebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 140, 70));
 
+        jButton1.setText("Load game");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 230, 60));
+
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\user-pc\\Documents\\NetBeansProjects\\PAT_GR10\\src\\main\\resources\\images\\pattest2.png")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
@@ -76,7 +80,7 @@ public class PAT_homescreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void infobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobuttonActionPerformed
-        Info_pg1 s2 = new Info_pg1();
+        Info s2 = new Info();
         s2.setVisible(true);
         dispose();        // TODO add your handling code here:
 
@@ -87,8 +91,8 @@ public class PAT_homescreen extends javax.swing.JFrame {
     }//GEN-LAST:event_ClosebuttonActionPerformed
 
     private void playbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playbuttonActionPerformed
-         Main main = new Main();
-         main.setVisible(true);
+         newuser login = new newuser();
+         login.setVisible(true);
          dispose();
     }//GEN-LAST:event_playbuttonActionPerformed
 
@@ -131,6 +135,7 @@ public class PAT_homescreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Closebutton;
     private javax.swing.JButton infobutton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton playbutton;
     // End of variables declaration//GEN-END:variables

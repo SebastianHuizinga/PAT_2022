@@ -97,6 +97,29 @@ public class methods {
         return returnAnsval;
 
     }
+    
+      public static String[] GetQuest(){
+          
+          
+          
+          
+        
+        return null;
+        
+    }
+    
+      public static String[] GetOpt(){
+        
+        return null;    
+        
+    }
+    
+    public static String[] GetResponse(){
+        
+        return null;
+        
+    }
+    
 
 }
 

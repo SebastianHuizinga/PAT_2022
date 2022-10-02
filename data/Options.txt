@@ -1,0 +1,14 @@
+1#1#1#Positive#10
+1#1#2#Negative#-10
+2#1#1#Positive#10
+2#1#2#Negative#-10
+3#1#1#Positive#10
+3#1#2#Negative#-10
+3#2#1#Positive#10
+3#2#2#Negative#-10
+4#1#1#Positive#10
+4#1#2#Negative#-10
+5#1#1#Positive#10
+5#1#2#Negative#-10
+6#1#1#Positive#10
+6#1#2#Negative#-10
