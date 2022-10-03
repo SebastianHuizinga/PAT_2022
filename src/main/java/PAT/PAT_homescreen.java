@@ -43,6 +43,11 @@ public class PAT_homescreen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(252, 161, 158));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setMinimumSize(new java.awt.Dimension(840, 560));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(840, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         playbutton.setText("New game");
@@ -51,7 +56,7 @@ public class PAT_homescreen extends javax.swing.JFrame {
                 playbuttonActionPerformed(evt);
             }
         });
-        getContentPane().add(playbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 230, 60));
+        getContentPane().add(playbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 230, 60));
 
         infobutton.setText("Info");
         infobutton.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +64,7 @@ public class PAT_homescreen extends javax.swing.JFrame {
                 infobuttonActionPerformed(evt);
             }
         });
-        getContentPane().add(infobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 230, 60));
+        getContentPane().add(infobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 230, 60));
 
         Closebutton.setText("the close button");
         Closebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -67,14 +72,15 @@ public class PAT_homescreen extends javax.swing.JFrame {
                 ClosebuttonActionPerformed(evt);
             }
         });
-        getContentPane().add(Closebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 140, 70));
+        getContentPane().add(Closebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 140, 70));
 
         jButton1.setText("Load game");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 230, 60));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 230, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\user-pc\\Documents\\NetBeansProjects\\PAT_GR10\\src\\main\\resources\\images\\pattest2.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GATORSCREEN.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
+        jLabel1.setInheritsPopupMenu(false);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -10, 880, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
