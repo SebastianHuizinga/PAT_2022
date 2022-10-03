@@ -5,7 +5,7 @@
 package PAT;
 
 import backend.GatorQuestion;
-import backend.DialogueMethods;
+import backend.GatorChat;
 import javax.swing.JProgressBar;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -25,13 +25,13 @@ public class Main extends javax.swing.JFrame {
     private int ans_val1 = 0;
     private int ans_val2 = 0;
     
-    private DialogueMethods dMethods;
+    private GatorChat dMethods;
     private GatorQuestion currentQuestion;
     
 
     public Main() {
         
-        dMethods = new DialogueMethods();
+        dMethods = new GatorChat();
         dMethods.loadQuestions();
         
         initComponents();
@@ -138,8 +138,8 @@ public class Main extends javax.swing.JFrame {
             setQuestionForId(currentQuestion.options[selection].nextQuestionId);
         } else {
             target.setBackground(Color.RED);
-             dialogue_area.setText("Gator cannot find JSON!!");
-            target.setText("Gator eats you");
+             dialogue_area.setText("Gator cannot find JSON question!!");
+            target.setText("gator eats you");
         }
     }
     
