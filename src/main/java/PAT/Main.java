@@ -4,11 +4,12 @@
  */
 package PAT;
 
-import backend.methods;
-import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import backend.GatorQuestion;
+import backend.DialogueMethods;
 import javax.swing.JProgressBar;
+import javax.swing.JButton;
+import java.awt.Color;
+
 
 /**
  *
@@ -23,23 +24,37 @@ public class Main extends javax.swing.JFrame {
     private int bar_value = 0;
     private int ans_val1 = 0;
     private int ans_val2 = 0;
+    
+    private DialogueMethods dMethods;
+    private GatorQuestion currentQuestion;
+    
 
     public Main() {
+        
+        dMethods = new DialogueMethods();
+        dMethods.loadQuestions();
+        
         initComponents();
+        setQuestionForId("Q1");
+        
         Lovebar.setOrientation(Lovebar.VERTICAL);
         t1 = new bartracker(Lovebar);
         t1.start();
-
+    }
+    
+    private void setQuestionForId(String questionId) {
+        currentQuestion = dMethods.questions.get(questionId);
+        if(currentQuestion != null){
+            dialogue_area.setText(currentQuestion.theQuestion);
+            button1.setText(currentQuestion.options[0].theResponse);
+            button2.setText(currentQuestion.options[1].theResponse);
+        }
     }
 
     class bartracker extends Thread {
-
         JProgressBar lovebar;
-
         bartracker(JProgressBar lovebar) {
-
             lovebar = Lovebar;
-
         }
 
         public void run() {
@@ -111,91 +126,23 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        try {
-            int rand = methods.Rando(6, 1);
-            //dialogue area
-            String text = methods.Happy(rand);
-            dialogue_area.setText(text);
-
-            //button text
-            String[] answers = methods.Happy_ans(rand);
-            String ans1 = answers[0];
-            String ans2 = answers[1];
-
-            button1.setText(ans2);
-            button2.setText(ans1);
-
-            //button values
-            int[] ansval = methods.Happy_ansval(rand);
-            ans_val1 = ansval[0];
-            ans_val2 = ansval[1];
-
-            bar_value += ans_val1;
-
-            Lovebar.setValue(bar_value);
-            Lovebar.setValue(bar_value);
-            if (bar_value < 0) {
-                bar_value = 0;
-                Lovebar.setValue(bar_value);
-
-            }
-            if (bar_value > 100) {
-                bar_value = 100;
-                Lovebar.setValue(bar_value);
-
-            }
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("error");
-
-        }
-
-        // TODO add your handling code here:
+        handleButtonAction((JButton) evt.getSource());
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-
-        try {
-            int rand = methods.Rando(6, 1);
-            //dialogue area
-            String text = methods.Happy(rand);
-            dialogue_area.setText(text);
-
-            //button text
-            String[] answers = methods.Happy_ans(rand);
-            String ans1 = answers[0];
-            String ans2 = answers[1];
-
-            button1.setText(ans2);
-            button2.setText(ans1);
-
-            //button values
-            int[] ansval = methods.Happy_ansval(rand);
-            ans_val1 = ansval[0];
-            ans_val2 = ansval[1];
-
-            bar_value += ans_val2;
-
-            Lovebar.setValue(bar_value);
-            if (bar_value < 0) {
-                bar_value = 0;
-                Lovebar.setValue(bar_value);
-
-            }
-            if (bar_value > 100) {
-                bar_value = 100;
-                Lovebar.setValue(bar_value);
-
-            }
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("error");
-        }
-
+        handleButtonAction((JButton) evt.getSource());
     }//GEN-LAST:event_button2ActionPerformed
-
+    private void handleButtonAction(JButton target) {
+        if (currentQuestion != null) {
+            int selection = (target == this.button1) ? 0 : 1;
+            setQuestionForId(currentQuestion.options[selection].nextQuestionId);
+        } else {
+            target.setBackground(Color.RED);
+             dialogue_area.setText("Gator cannot find JSON!!");
+            target.setText("Gator eats you");
+        }
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         PAT_homescreen home = new PAT_homescreen();
         home.setVisible(true);

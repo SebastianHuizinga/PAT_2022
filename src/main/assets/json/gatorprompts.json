@@ -9,7 +9,8 @@
                         "optionId": "O1",
                         "optiontext": "this is Option 1(Q1) which links to Question 2",
                         "barvalue": "15",
-                        "linksToQuestionID" : "Q2"
+                        "linksToQuestionID" : "Q2",
+                          "image": ""
                     }
                 },
                 {
@@ -17,7 +18,8 @@
                         "optionId": "O2",
                         "optiontext": "this is Option 2(Q1) which links to Question 3",
                         "barvalue": "-15",
-                        "linksToQuestionID" : "Q3"
+                        "linksToQuestionID" : "Q3",
+                          "image": ""
                     }
                 }
             ]
@@ -33,7 +35,8 @@
                         "optionId": "O3",
                         "optiontext": "this is Option 3 which links to Question 4",
                         "barvalue": "-15",
-                        "linksToQuestionID" : "Q4"
+                        "linksToQuestionID" : "Q4",
+                        "image": ""
                     }
                 },
                 {
@@ -41,7 +44,8 @@
                         "optionId": "O4",
                         "optiontext": "this is Option 4 which links to Question 5",
                         "barvalue": "15",
-                        "linksToQuestionID" : "Q5"
+                        "linksToQuestionID" : "Q5",
+                          "image": ""
                     }
                 }
             ]
@@ -57,7 +61,8 @@
                         "optionId": "O5",
                         "optiontext": "this is Option 5 which links to Question 6",
                         "barvalue": "15",
-                        "linksToQuestionID" : "Q6"
+                        "linksToQuestionID" : "Q6",
+                          "image": ""
                     }
                 },
                 {
@@ -65,7 +70,8 @@
                         "optionId": "O6",
                         "optiontext": "this is Option 6 which links to Question 7",
                         "barvalue": "-15",
-                        "linksToQuestionID" : "Q7"
+                        "linksToQuestionID" : "Q7",
+                          "image": ""
                     }
                 }
             ]

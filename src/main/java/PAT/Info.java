@@ -105,7 +105,7 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_home_btnActionPerformed
 
     private void pg_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pg_nextActionPerformed
-       
+        jTextArea1.setText("this is the next page");
       
     }//GEN-LAST:event_pg_nextActionPerformed
 
