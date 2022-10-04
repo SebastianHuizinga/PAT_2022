@@ -9,10 +9,10 @@ package backend;
  * @author user-pc
  */
 public class GatorQuestion {
-    
-    public String theQuestion;
-    public String id;
-    public GatorOptions[] options;
+
+    public String questionText;
+    public String questionID;
+    public GatorOption[] options;
     public String image;
-    
+
 }

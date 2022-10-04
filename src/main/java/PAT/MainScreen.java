@@ -5,66 +5,47 @@
 package PAT;
 
 import backend.GatorQuestion;
-import backend.GatorChat;
+import backend.ChatManager;
 import javax.swing.JProgressBar;
 import javax.swing.JButton;
 import java.awt.Color;
-
 
 /**
  *
  * @author user-pc
  */
-public class Main extends javax.swing.JFrame {
+public class MainScreen extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
      */
-    bartracker t1;
     private int bar_value = 0;
     private int ans_val1 = 0;
     private int ans_val2 = 0;
-    
-    private GatorChat dMethods;
+
+    private ChatManager chatManager;
     private GatorQuestion currentQuestion;
-    
 
-    public Main() {
-        
-        dMethods = new GatorChat();
-        dMethods.loadQuestions();
-        
+    public MainScreen() {
         initComponents();
+
+        chatManager = new ChatManager();
+
         setQuestionForId("Q1");
-        
-        Lovebar.setOrientation(Lovebar.VERTICAL);
-        t1 = new bartracker(Lovebar);
-        t1.start();
+
+        loveBar.setOrientation(loveBar.VERTICAL);
+        loveBar.setMinimum(0);
+        loveBar.setMaximum(100);
+        loveBar.setValue(0);
     }
-    
+
     private void setQuestionForId(String questionId) {
-        currentQuestion = dMethods.questions.get(questionId);
-        if(currentQuestion != null){
-            dialogue_area.setText(currentQuestion.theQuestion);
-            button1.setText(currentQuestion.options[0].theResponse);
-            button2.setText(currentQuestion.options[1].theResponse);
-        }
-    }
-
-    class bartracker extends Thread {
-        JProgressBar lovebar;
-        bartracker(JProgressBar lovebar) {
-            lovebar = Lovebar;
-        }
-
-        public void run() {
-            int bar_max = 100;
-            int bar_min = 0;
-
-            Lovebar.setMinimum(bar_min);
-            Lovebar.setMaximum(bar_max);
-            Lovebar.setValue(0);
-
+        currentQuestion = chatManager.questions.get(questionId);
+        if (currentQuestion != null) {
+            dialogue_area.setText(currentQuestion.questionText);
+            button1.setText(currentQuestion.options[0].optionText);
+            button2.setText(currentQuestion.options[1].optionText);
+            System.out.println(currentQuestion);
         }
 
     }
@@ -82,7 +63,7 @@ public class Main extends javax.swing.JFrame {
         dialogue_area = new javax.swing.JTextArea();
         button1 = new javax.swing.JButton();
         button2 = new javax.swing.JButton();
-        Lovebar = new javax.swing.JProgressBar();
+        loveBar = new javax.swing.JProgressBar();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,8 +92,8 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 620, 280, 90));
 
-        Lovebar.setToolTipText("");
-        getContentPane().add(Lovebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 490));
+        loveBar.setToolTipText("");
+        getContentPane().add(loveBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 490));
 
         jButton1.setText("Quit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -131,20 +112,25 @@ public class Main extends javax.swing.JFrame {
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         handleButtonAction((JButton) evt.getSource());
+        System.out.println("");
     }//GEN-LAST:event_button2ActionPerformed
+
     private void handleButtonAction(JButton target) {
-        if (currentQuestion != null) {
+        if (this.currentQuestion != null) {
             int selection = (target == this.button1) ? 0 : 1;
-            setQuestionForId(currentQuestion.options[selection].nextQuestionId);
-        } else {
+            setQuestionForId(this.currentQuestion.options[selection].nextQuestionID);
+
+        }
+
+        if (this.currentQuestion == null) {
             target.setBackground(Color.RED);
-             dialogue_area.setText("Gator cannot find JSON question!!");
+            dialogue_area.setText("Gator cannot find JSON question!!");
             target.setText("gator eats you");
         }
     }
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        PAT_homescreen home = new PAT_homescreen();
+        LandingScreen home = new LandingScreen();
         home.setVisible(true);
         dispose();           // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -166,30 +152,33 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new MainScreen().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar Lovebar;
     private javax.swing.JButton button1;
     private javax.swing.JButton button2;
     private javax.swing.JTextArea dialogue_area;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JProgressBar loveBar;
     // End of variables declaration//GEN-END:variables
 }
