@@ -16,7 +16,7 @@ import javax.swing.Timer;
  *
  * @author Sebastianh
  */
-public final class BirdMiniGame extends javax.swing.JFrame {
+public final class GameScreen1 extends javax.swing.JFrame {
 
     Timer stopwatch;
     int count = 0;
@@ -28,12 +28,7 @@ public final class BirdMiniGame extends javax.swing.JFrame {
             if (count == 0) {
                 stopwatch.stop();
 
-                BirdLossScreen loss = new BirdLossScreen();
-                System.out.println("Lose");
                 Timer.setText("out of time");
-                loss.setVisible(true);
-                dispose();
-
             } else {
                 Timer.setText(" " + count + "seconds");
                 count--;
@@ -58,7 +53,7 @@ public final class BirdMiniGame extends javax.swing.JFrame {
     private int x_btn = 0;
     private int y_btn = 0;
 
-    public BirdMiniGame() {
+    public GameScreen1() {
         initComponents();
         cursor.setVisible(false);
 
@@ -82,7 +77,7 @@ public final class BirdMiniGame extends javax.swing.JFrame {
         clock_icon.setLocation(Timer.getLocation());
 
         //clock_icon.setLocation(Timer.getLocation());
-        startTimer(90);
+        startTimer(100);
 
     }
 
@@ -209,7 +204,7 @@ public final class BirdMiniGame extends javax.swing.JFrame {
             score.setText("ONE MORE! " + birds_hit + " HITS!");
         } else if (birds_hit == 30) {
             score.setText("WOWEOWEOWEOWEOW");
-            BirdWinScreen gw = new BirdWinScreen();
+            Game_1_win gw = new Game_1_win();
             gw.setVisible(true);
             dispose();
 
@@ -240,7 +235,7 @@ public final class BirdMiniGame extends javax.swing.JFrame {
             score.setText("ONE MORE! " + birds_hit + " HITS!");
         } else if (birds_hit == 30) {
             score.setText("WOWEOWEOWEOWEOW");
-            BirdWinScreen gw = new BirdWinScreen();
+            Game_1_win gw = new Game_1_win();
             gw.setVisible(true);
             dispose();
         }
@@ -270,7 +265,7 @@ public final class BirdMiniGame extends javax.swing.JFrame {
             score.setText("ONE MORE! " + birds_hit + " HITS!");
         } else if (birds_hit == 30) {
             score.setText("WOWEOWEOWEOWEOW");
-            BirdWinScreen gw = new BirdWinScreen();
+            Game_1_win gw = new Game_1_win();
             gw.setVisible(true);
             dispose();
 
@@ -294,21 +289,20 @@ public final class BirdMiniGame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BirdMiniGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameScreen1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BirdMiniGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameScreen1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BirdMiniGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameScreen1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BirdMiniGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameScreen1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BirdMiniGame().setVisible(true);
+                new GameScreen1().setVisible(true);
             }
         });
     }

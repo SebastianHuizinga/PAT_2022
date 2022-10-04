@@ -5,18 +5,19 @@
 package PAT;
 
 import java.awt.Toolkit;
+import java.awt.Window;
 import java.awt.event.WindowEvent;
 
 /**
  *
  * @author user-pc
  */
-public class LandingScreen extends javax.swing.JFrame {
+public class PAT_homescreen extends javax.swing.JFrame {
 
     /**
      * Creates new form patTest2
      */
-    public LandingScreen() {
+    public PAT_homescreen() {
         initComponents();
     }
 
@@ -85,7 +86,7 @@ public class LandingScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void infobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infobuttonActionPerformed
-        HelpScreen s2 = new HelpScreen();
+        Info s2 = new Info();
         s2.setVisible(true);
         dispose();        // TODO add your handling code here:
 
@@ -96,9 +97,9 @@ public class LandingScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_ClosebuttonActionPerformed
 
     private void playbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playbuttonActionPerformed
-        NewUser login = new NewUser();
-        login.setVisible(true);
-        dispose();
+         newuser login = new newuser();
+         login.setVisible(true);
+         dispose();
     }//GEN-LAST:event_playbuttonActionPerformed
 
     /**
@@ -108,7 +109,7 @@ public class LandingScreen extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -118,35 +119,21 @@ public class LandingScreen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LandingScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PAT_homescreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LandingScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PAT_homescreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LandingScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PAT_homescreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LandingScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PAT_homescreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LandingScreen().setVisible(true);
+                new PAT_homescreen().setVisible(true);
             }
         });
     }

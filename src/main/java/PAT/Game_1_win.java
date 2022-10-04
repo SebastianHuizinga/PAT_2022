@@ -8,12 +8,12 @@ package PAT;
  *
  * @author user-pc
  */
-public class BirdWinScreen extends javax.swing.JFrame {
+public class Game_1_win extends javax.swing.JFrame {
 
     /**
      * Creates new form Game_1_win
      */
-    public BirdWinScreen() {
+    public Game_1_win() {
         initComponents();
     }
 
@@ -31,6 +31,7 @@ public class BirdWinScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1230, 530));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Go_back.setText("Home");
@@ -50,10 +51,15 @@ public class BirdWinScreen extends javax.swing.JFrame {
 
     private void Go_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Go_backActionPerformed
 
-        MainScreen main = new MainScreen();
+        Main main = new Main();
         main.setVisible(true);
         dispose();
+        
 
+
+        
+        
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_Go_backActionPerformed
 
@@ -64,7 +70,7 @@ public class BirdWinScreen extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -74,21 +80,20 @@ public class BirdWinScreen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BirdWinScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game_1_win.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BirdWinScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game_1_win.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BirdWinScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game_1_win.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BirdWinScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game_1_win.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BirdWinScreen().setVisible(true);
+                new Game_1_win().setVisible(true);
             }
         });
     }
