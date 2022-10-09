@@ -14,5 +14,15 @@ public class GatorQuestion {
     public String questionID;
     public GatorOption[] options;
     public String image;
-
+    
+    public String toString(){
+        String ret = "\n--------------------------";
+        ret += "\nquestionText: " + questionText;
+        ret += "\nquestionID: " + questionID;
+        ret += "\noptions[]: " + questionID;
+        for(int i=0; i<options.length; i++) {
+            ret += options[i].toString();
+        }
+        return ret;
+    }
 }

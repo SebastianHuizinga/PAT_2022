@@ -14,6 +14,18 @@ public class GatorOption {
     public String optionText;
     public String nextQuestionID;
     public String optionImage;
+    public String response;
+    public String barvalue;
+    
+    public String toString(){
+        String ret = "\n\toptionID: " + optionID;
+        ret += "\n\toptionText: " + optionText;
+        ret += "\n\tnextQuestionID: " + nextQuestionID;
+        ret += "\n\toptionImage: " + optionImage;
+        ret += "\n\tresponse: " + response;
+        ret +=  "\n\tvalue: " + barvalue;
+        return ret;
+    }
 
 //    private String id;
 //    public void setId(String id){

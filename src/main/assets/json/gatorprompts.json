@@ -1,80 +1,472 @@
-[
-    {   
-        "question": {
-            "questionID": "Q1",
-            "questionText": "show me the options for Q1",
-            "options": [
-                {
-                    "option":{
-                        "optionID": "O1",
-                        "optionText": "this is Option 1(Q1) which links to Question 2",
-                        "barvalue": "15",
-                        "nextQuestionID" : "Q2",
-                          "optionImage": ""
-                    }
-                },
-                {
-                    "option":{
-                        "optionID": "O2",
-                        "optionText": "this is Option 2(Q1) which links to Question 3",
-                        "barvalue": "-15",
-                        "nextQuestionID" : "Q3",
-                          "optionImage": ""
-                    }
-                }
-            ]
-        }
-    }, 
-    {
-        "question": {
-            "questionID": "Q2",
-            "questionText": "show me the options for Q2",
-            "options": [
-                {
-                    "option":{
-                        "optionID": "O3",
-                        "optionText": "this is Option 3 which links to Question 4",
-                        "barvalue": "-15",
-                        "nextQuestionID" : "Q4",
-                        "optionImage": ""
-                    }
-                },
-                {
-                    "option":{
-                        "optionID": "O4",
-                        "optionText": "this is Option 4 which links to Question 5",
-                        "barvalue": "15",
-                        "nextQuestionID" : "Q5",
-                          "optionImage": ""
-                    }
-                }
-            ]
-        }
-    },
-    {
-        "question": {
-            "questionID": "Q3",
-            "questionText": "show me the options for Q3",
-            "options": [
-                {
-                    "option":{
-                        "optionID": "O5",
-                        "optionText": "this is Option 5 which links to Question 6",
-                        "barvalue": "15",
-                        "nextQuestionID" : "Q6",
-                          "optionImage": ""
-                    }
-                },
-                {
-                    "option":{
-                        "optionID": "O6",
-                        "optionText": "this is Option 6 which links to Question 7",
-                        "barvalue": "-15",
-                        "nextQuestionID" : "Q7",
-                          "optionImage": ""
-                    }
-                }
-            ]
-        }
-    }
+[{
+		"question": {
+			"questionID": "Q1",
+			"questionText": "KNOCK,KNOCK",
+			"options": [{
+					"option": {
+						"optionID": "O1",
+						"optionText": "Who is it?",
+						"barvalue": "0",
+						"response": "Alli",
+						"nextQuestionID": "Q2",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": { 
+						"optionID": "O2",
+						"optionText": "Whos there?",
+						"barvalue": "0",
+						"response": "Alli",
+						"nextQuestionID": "Q2",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+			]
+		}
+	},
+	{
+		"question": {
+			"questionID": "Q2",
+			"questionText": "My names Alli",
+			"options": [{
+					"option": {
+						"optionID": "O3",
+						"optionText": "Alli who?",
+						"barvalue": "0",
+						"response": "Gater",
+						"nextQuestionID": "Q3",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O4",
+						"optionText": "I dont know any Allis so leave me alone",
+						"barvalue": "0",
+						"response": "Thats why im here to introduce myself",
+						"nextQuestionID": "Q4",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+			]
+		}
+	},
+	{
+		"question": {
+			"questionID": "Q3",
+			"questionText": "Do you mind opening the door for me?",
+			"options": [{
+					"option": {
+						"optionID": "O5",
+						"optionText": "I dont know you ",
+						"barvalue": "-15",
+						"response": "Thats why i want to introduce myself",
+						"nextQuestionID": "Q4",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O6",
+						"optionText": "ugh fine",
+						"barvalue": "+15",
+						"response": "Thank you",
+						"nextQuestionID": "Q8",
+						"optionImage": "src\\main\\resources\\images\\Gatordooropen.png"
+					}
+				}
+			]
+		}
+	},
+	{
+		"question": {
+			"questionID": "Q4",
+			"questionText": "So would you please open the door?",
+			"options": [{
+					"option": {
+						"optionID": "O7",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Come oooon",
+						"nextQuestionID": "Q5",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O8",
+						"optionText": "Im not kidding ill call them",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q7",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+			]
+		}
+	},
+	{
+		"question": {
+			"questionID": "Q5",
+			"questionText": "So can you please just open the door",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "fine",
+						"barvalue": "15",
+						"response": "Thanks",
+						"nextQuestionID": "Q8",
+						"optionImage": "src\\main\\resources\\images\\Gatordooropen.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Whatever sure",
+						"barvalue": "-15",
+						"response": "finally",
+						"nextQuestionID": "Q8",
+						"optionImage": "src\\main\\resources\\images\\Gatordooropen.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q6",
+			"questionText": "Q6",
+			"options": [{
+					"option": {
+						"optionID": "O5",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Thats why i wanted to introduce myself",
+						"nextQuestionID": "Q4",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O6",
+						"optionText": "Im calling the cops",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q7",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q7",
+			"questionText": "Just hear me out alright?",
+			"options": [{
+					"option": {
+						"optionID": "O11",
+						"optionText": "Fine.",
+						"barvalue": "",
+						"response": "finally",
+						"nextQuestionID": "Q8",
+						"optionImage": "src\\main\\resources\\images\\Gatordooropen.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O12",
+						"optionText": "Fine (but angrier)",
+						"barvalue": "-15",
+						"response": "Geez ok grumpy",
+						"nextQuestionID": "Q8",
+						"optionImage": "src\\main\\resources\\images\\Gatordooropen.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q8",
+			"questionText": "Soooo, i just moved in next dorr and I dont know anybody..... aaaaaaand I was wondering if maybe you wanted to... I dont know go out for something to eat?? And maybe be my friend?",
+			"options": [{
+					"option": {
+						"optionID": "O13",
+						"optionText": "Sure i dont have anything better to do i guess",
+						"barvalue": "15",
+						"response": "SWEET!",
+						"nextQuestionID": "Q10",
+						"optionImage": "src\\main\\resources\\images\\Gatordooropen.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O14",
+						"optionText": "Hell no",
+						"barvalue": "-15",
+						"response": "ok how about now",
+						"nextQuestionID": "Q9",
+						"optionImage": "src\\main\\resources\\images\\Gatordooropen.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q9",
+			"questionText": "PLEEEEAAAAAAASE",
+			"options": [{
+					"option": {
+						"optionID": "O15",
+						"optionText": "UUUUUUUUUGGH, fine",
+						"barvalue": "15",
+						"response": "YES!!!",
+						"nextQuestionID": "Q10",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O16",
+						"optionText": "If itll get you to leave me alone then sure",
+						"barvalue": "-15",
+						"response": "YIPEE!",
+						"nextQuestionID": "Q10",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q10",
+			"questionText": "Number 10",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "PLACE GO",
+						"barvalue": "15",
+						"response": "ok",
+						"nextQuestionID": "Q11",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "other place",
+						"barvalue": "-15",
+						"response": "ok",
+						"nextQuestionID": "Q12",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q11",
+			"questionText": "So would you please open the door?",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Thats why i wanted to introduce myself",
+						"nextQuestionID": "Q6",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Im calling the cops",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q1",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q12",
+			"questionText": "So would you please open the door?",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Thats why i wanted to introduce myself",
+						"nextQuestionID": "Q6",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Im calling the cops",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q1",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q13",
+			"questionText": "So would you please open the door?",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Thats why i wanted to introduce myself",
+						"nextQuestionID": "Q6",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Im calling the cops",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q1",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q14",
+			"questionText": "So would you please open the door?",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Thats why i wanted to introduce myself",
+						"nextQuestionID": "Q6",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Im calling the cops",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q1",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q15",
+			"questionText": "So would you please open the door?",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Thats why i wanted to introduce myself",
+						"nextQuestionID": "Q6",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Im calling the cops",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q1",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q16",
+			"questionText": "So would you please open the door?",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Thats why i wanted to introduce myself",
+						"nextQuestionID": "Q6",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Im calling the cops",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q1",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+		"question": {
+			"questionID": "Q17",
+			"questionText": "So would you please open the door?",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "I dont know you please leave",
+						"barvalue": "15",
+						"response": "Thats why i wanted to introduce myself",
+						"nextQuestionID": "Q6",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Im calling the cops",
+						"barvalue": "-15",
+						"response": "bruh",
+						"nextQuestionID": "Q1",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	}
 ]

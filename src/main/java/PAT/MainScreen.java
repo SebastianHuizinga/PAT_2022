@@ -9,6 +9,8 @@ import backend.ChatManager;
 import javax.swing.JProgressBar;
 import javax.swing.JButton;
 import java.awt.Color;
+import backend.GatorOption;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -25,12 +27,15 @@ public class MainScreen extends javax.swing.JFrame {
 
     private ChatManager chatManager;
     private GatorQuestion currentQuestion;
+    private GatorOption currenOption;
+    private boolean hasResponded = false;
 
     public MainScreen() {
         initComponents();
 
         chatManager = new ChatManager();
 
+        hasResponded = true;
         setQuestionForId("Q1");
 
         loveBar.setOrientation(loveBar.VERTICAL);
@@ -41,6 +46,7 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void setQuestionForId(String questionId) {
         currentQuestion = chatManager.questions.get(questionId);
+        //System.out.println(currentQuestion.toString());
         if (currentQuestion != null) {
             dialogue_area.setText(currentQuestion.questionText);
             button1.setText(currentQuestion.options[0].optionText);
@@ -65,6 +71,7 @@ public class MainScreen extends javax.swing.JFrame {
         button2 = new javax.swing.JButton();
         loveBar = new javax.swing.JProgressBar();
         jButton1 = new javax.swing.JButton();
+        imagearea = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,32 +109,46 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 10, -1, 50));
+        getContentPane().add(imagearea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+
         handleButtonAction((JButton) evt.getSource());
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+
         handleButtonAction((JButton) evt.getSource());
-        System.out.println("");
     }//GEN-LAST:event_button2ActionPerformed
 
     private void handleButtonAction(JButton target) {
-        if (this.currentQuestion != null) {
-            int selection = (target == this.button1) ? 0 : 1;
-            setQuestionForId(this.currentQuestion.options[selection].nextQuestionID);
-
-        }
-
         if (this.currentQuestion == null) {
             target.setBackground(Color.RED);
             dialogue_area.setText("Gator cannot find JSON question!!");
             target.setText("gator eats you");
+            return;
+        }
+        hasResponded = !hasResponded;
+        button2.setVisible(hasResponded);
+        if (!hasResponded) {
+            currenOption = (target == this.button1) ? currentQuestion.options[0] : currentQuestion.options[1];
+            dialogue_area.setText(currenOption.response);
+            button1.setText("Next");
+             ImageIcon icon = new ImageIcon(currenOption.optionImage);
+             imagearea.setIcon(icon);
+            int val = Integer.parseInt(currenOption.barvalue);
+            bar_value += val;
+            loveBar.setValue(bar_value);
+        } else {
+            setQuestionForId(currenOption.nextQuestionID);
+            
+            
         }
     }
+
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         LandingScreen home = new LandingScreen();
@@ -177,6 +198,7 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JButton button1;
     private javax.swing.JButton button2;
     private javax.swing.JTextArea dialogue_area;
+    private javax.swing.JLabel imagearea;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JProgressBar loveBar;
