@@ -1,12 +1,7 @@
 package PAT;
 
-
-import java.awt.Button;
-import static java.lang.Math.random;
 import java.util.ArrayList;
-import java.util.Random;
 import javax.swing.JButton;
-import javax.swing.SpringLayout;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -27,6 +22,31 @@ public class PuzzleGame extends javax.swing.JFrame {
         jButton1.setVisible(false);
         jButton3.setVisible(false);
         jLabel3.setVisible(false);
+
+        /**
+         *
+         */
+        ArrayList<JButton> buttons = new ArrayList<JButton>();
+        buttons.add(button1);
+        buttons.add(button2);
+        buttons.add(button3);
+        buttons.add(button4);
+        buttons.add(button5);
+        buttons.add(button6);
+        buttons.add(button7);
+        buttons.add(button8);
+        buttons.add(button9);
+        buttons.add(button10);
+        buttons.add(button11);
+        buttons.add(button12);
+
+        for (int i = 0; i < 2000; i++) {
+            int randnum = (int) (Math.random() * ((12) - 0) + 0);
+            int randnum2 = (int) (Math.random() * ((12) - 0) + 0);
+
+            Move(buttons.get(randnum), buttons.get(randnum2));
+        }
+
     }
 
     /**
@@ -48,7 +68,7 @@ public class PuzzleGame extends javax.swing.JFrame {
 
     }
 
-    void EmptySpotChecker(JButton Butt1, JButton Butt2) {
+    void Move(JButton Butt1, JButton Butt2) {
 
         String ShuffleNumber = Butt2.getText();
         if (ShuffleNumber == "") {
@@ -56,11 +76,6 @@ public class PuzzleGame extends javax.swing.JFrame {
             Butt2.setText(Butt1.getText());
             Butt1.setText("");
         }
-
-    }
-
-    public void Shuffle() {
-     
 
     }
 
@@ -327,83 +342,83 @@ public class PuzzleGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        EmptySpotChecker(button3, button2);
-        EmptySpotChecker(button3, button4);
-        EmptySpotChecker(button3, button7);
+        Move(button3, button2);
+        Move(button3, button4);
+        Move(button3, button7);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        EmptySpotChecker(button4, button3);
-        EmptySpotChecker(button4, button8);
+        Move(button4, button3);
+        Move(button4, button8);
         SolveState();
 // TODO add your handling code here:
     }//GEN-LAST:event_button4ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        EmptySpotChecker(button1, button2);
-        EmptySpotChecker(button1, button5);
+        Move(button1, button2);
+        Move(button1, button5);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        EmptySpotChecker(button2, button3);
-        EmptySpotChecker(button2, button6);
-        EmptySpotChecker(button2, button1);
+        Move(button2, button3);
+        Move(button2, button6);
+        Move(button2, button1);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
-        EmptySpotChecker(button6, button2);
-        EmptySpotChecker(button6, button5);
-        EmptySpotChecker(button6, button7);
-        EmptySpotChecker(button6, button10);
+        Move(button6, button2);
+        Move(button6, button5);
+        Move(button6, button7);
+        Move(button6, button10);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button6ActionPerformed
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
-        EmptySpotChecker(button7, button3);
-        EmptySpotChecker(button7, button6);
-        EmptySpotChecker(button7, button8);
-        EmptySpotChecker(button7, button11);
+        Move(button7, button3);
+        Move(button7, button6);
+        Move(button7, button8);
+        Move(button7, button11);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button7ActionPerformed
 
     private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
-        EmptySpotChecker(button8, button4);
-        EmptySpotChecker(button8, button7);
-        EmptySpotChecker(button8, button12);
+        Move(button8, button4);
+        Move(button8, button7);
+        Move(button8, button12);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button8ActionPerformed
 
     private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
-        EmptySpotChecker(button5, button1);
-        EmptySpotChecker(button5, button6);
-        EmptySpotChecker(button5, button9);    // TODO add your handling code here:
+        Move(button5, button1);
+        Move(button5, button6);
+        Move(button5, button9);    // TODO add your handling code here:
     }//GEN-LAST:event_button5ActionPerformed
 
     private void button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button10ActionPerformed
-        EmptySpotChecker(button10, button9);
-        EmptySpotChecker(button10, button6);
-        EmptySpotChecker(button10, button11);
+        Move(button10, button9);
+        Move(button10, button6);
+        Move(button10, button11);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button10ActionPerformed
 
     private void button11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button11ActionPerformed
-        EmptySpotChecker(button11, button12);
-        EmptySpotChecker(button11, button7);
-        EmptySpotChecker(button11, button10);    // TODO add your handling code here:
+        Move(button11, button12);
+        Move(button11, button7);
+        Move(button11, button10);    // TODO add your handling code here:
     }//GEN-LAST:event_button11ActionPerformed
 
     private void button12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button12ActionPerformed
-        EmptySpotChecker(button12, button8);
-        EmptySpotChecker(button12, button11);
+        Move(button12, button8);
+        Move(button12, button11);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button12ActionPerformed
 
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
-        EmptySpotChecker(button9, button5);
-        EmptySpotChecker(button9, button10);
+        Move(button9, button5);
+        Move(button9, button10);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button9ActionPerformed
 
@@ -412,7 +427,7 @@ public class PuzzleGame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Shuffle();        // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -450,7 +465,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -468,7 +483,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PuzzleGame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold> 
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
