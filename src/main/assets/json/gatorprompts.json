@@ -248,24 +248,24 @@
         {
 		"question": {
 			"questionID": "Q10",
-			"questionText": "Number 10",
+			"questionText": "Sooo maybe we go to like a restaurant or something? I heard theres a nice sushi place and a steak house nearby",
 			"options": [{
 					"option": {
-						"optionID": "O9",
-						"optionText": "PLACE GO",
-						"barvalue": "15",
-						"response": "ok",
+						"optionID": "O17",
+						"optionText": "Sushi sounds good i guess.......",
+						"barvalue": "-15",
+						"response": "yeah sure i could go with some fish,lets get heading",
 						"nextQuestionID": "Q11",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				},
 				{
 					"option": {
-						"optionID": "O10",
-						"optionText": "other place",
-						"barvalue": "-15",
-						"response": "ok",
-						"nextQuestionID": "Q12",
+						"optionID": "O18",
+						"optionText": "I guess we could get some steak",
+						"barvalue": "15",
+						"response": "Cant wait to meat you there hahaha... ha......... ok lets go.",
+						"nextQuestionID": "Q11",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				}
@@ -276,24 +276,24 @@
         {
 		"question": {
 			"questionID": "Q11",
-			"questionText": "So would you please open the door?",
+			"questionText": "Soo you nervous or arnything?",
 			"options": [{
 					"option": {
-						"optionID": "O9",
-						"optionText": "I dont know you please leave",
+						"optionID": "19",
+						"optionText": "No",
 						"barvalue": "15",
-						"response": "Thats why i wanted to introduce myself",
-						"nextQuestionID": "Q6",
+						"response": "oh alright then.. yeah me neither.. totally not",
+						"nextQuestionID": "Q12",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				},
 				{
 					"option": {
-						"optionID": "O10",
-						"optionText": "Im calling the cops",
+						"optionID": "O20",
+						"optionText": "a little",
 						"barvalue": "-15",
-						"response": "bruh",
-						"nextQuestionID": "Q1",
+						"response": "haha me too, dont worry itll be fine",
+						"nextQuestionID": "Q12",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				}
@@ -304,24 +304,24 @@
         {
 		"question": {
 			"questionID": "Q12",
-			"questionText": "So would you please open the door?",
+			"questionText": "Welp here it is...",
 			"options": [{
 					"option": {
-						"optionID": "O9",
-						"optionText": "I dont know you please leave",
+						"optionID": "O21",
+						"optionText": "This place sucks",
 						"barvalue": "15",
-						"response": "Thats why i wanted to introduce myself",
-						"nextQuestionID": "Q6",
+						"response": "yeahhhh......",
+						"nextQuestionID": "Q14",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				},
 				{
 					"option": {
-						"optionID": "O10",
-						"optionText": "Im calling the cops",
+						"optionID": "O22",
+						"optionText": "How the hell do you mix steak and sushi",
 						"barvalue": "-15",
-						"response": "bruh",
-						"nextQuestionID": "Q1",
+						"response": "............",
+						"nextQuestionID": "Q14",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				}
@@ -332,24 +332,24 @@
         {
 		"question": {
 			"questionID": "Q13",
-			"questionText": "So would you please open the door?",
+			"questionText": "Well here we are at the gateway to all authentic foods! THE AIRPORT FOOD COURT!",
 			"options": [{
 					"option": {
 						"optionID": "O9",
-						"optionText": "I dont know you please leave",
+						"optionText": "You are clinically insane",
 						"barvalue": "15",
-						"response": "Thats why i wanted to introduce myself",
-						"nextQuestionID": "Q6",
+						"response": "Oh.... I mean we could also take a plane somewhere?",
+						"nextQuestionID": "Q18",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				},
 				{
 					"option": {
 						"optionID": "O10",
-						"optionText": "Im calling the cops",
+						"optionText": ".........",
 						"barvalue": "-15",
-						"response": "bruh",
-						"nextQuestionID": "Q1",
+						"response": "Uhhh how about we take a plane....",
+						"nextQuestionID": "Q18",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				}
@@ -360,24 +360,24 @@
         {
 		"question": {
 			"questionID": "Q14",
-			"questionText": "So would you please open the door?",
+			"questionText": "Maybe we go get some from a more authentic place?",
 			"options": [{
 					"option": {
 						"optionID": "O9",
-						"optionText": "I dont know you please leave",
+						"optionText": "Yeah sounds good",
 						"barvalue": "15",
-						"response": "Thats why i wanted to introduce myself",
-						"nextQuestionID": "Q6",
+						"response": "Alrighty then follow me!",
+						"nextQuestionID": "Q15",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				},
 				{
 					"option": {
 						"optionID": "O10",
-						"optionText": "Im calling the cops",
+						"optionText": "Its fine lets just try this place out",
 						"barvalue": "-15",
-						"response": "bruh",
-						"nextQuestionID": "Q1",
+						"response": "Fine if you say so",
+						"nextQuestionID": "Q16",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				}
@@ -388,24 +388,24 @@
         {
 		"question": {
 			"questionID": "Q15",
-			"questionText": "So would you please open the door?",
+			"questionText": "Well here we are at the gateway to all authentic foods! THE AIRPORT FOOD COURT!",
 			"options": [{
 					"option": {
 						"optionID": "O9",
-						"optionText": "I dont know you please leave",
+						"optionText": "You are clinically insane",
 						"barvalue": "15",
-						"response": "Thats why i wanted to introduce myself",
-						"nextQuestionID": "Q6",
+						"response": "Oh.... I mean we could also take a plane somewhere?",
+						"nextQuestionID": "Q18",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				},
 				{
 					"option": {
 						"optionID": "O10",
-						"optionText": "Im calling the cops",
+						"optionText":  ".........",
 						"barvalue": "-15",
-						"response": "bruh",
-						"nextQuestionID": "Q1",
+						"response":  "Uhhh how about we take a plane....",
+						"nextQuestionID": "Q18",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				}
@@ -416,24 +416,24 @@
         {
 		"question": {
 			"questionID": "Q16",
-			"questionText": "So would you please open the door?",
+			"questionText": "You ready to order?",
 			"options": [{
 					"option": {
 						"optionID": "O9",
-						"optionText": "I dont know you please leave",
+						"optionText": "Yeah ill take a steak supreme sushi and you?",
 						"barvalue": "15",
-						"response": "Thats why i wanted to introduce myself",
-						"nextQuestionID": "Q6",
+						"response": "Uuuuuuuuuuh same here",
+						"nextQuestionID": "Q17",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				},
 				{
 					"option": {
 						"optionID": "O10",
-						"optionText": "Im calling the cops",
+						"optionText": "Ill have a salad",
 						"barvalue": "-15",
-						"response": "bruh",
-						"nextQuestionID": "Q1",
+						"response": "You know this is a steak place right? I might aswell have one too",
+						"nextQuestionID": "Q17",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				}
@@ -444,24 +444,135 @@
         {
 		"question": {
 			"questionID": "Q17",
-			"questionText": "So would you please open the door?",
+			"questionText": "Yeah im not doing this",
 			"options": [{
 					"option": {
 						"optionID": "O9",
-						"optionText": "I dont know you please leave",
+						"optionText": "agreed",
 						"barvalue": "15",
-						"response": "Thats why i wanted to introduce myself",
-						"nextQuestionID": "Q6",
+						"response": "Just follow me ill show you where to get some real food",
+						"nextQuestionID": "Q13",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				},
 				{
 					"option": {
 						"optionID": "O10",
-						"optionText": "Im calling the cops",
+						"optionText": "Me neither",
 						"barvalue": "-15",
-						"response": "bruh",
-						"nextQuestionID": "Q1",
+						"response": "Just follow me ill show you where to get some real food",
+						"nextQuestionID": "Q13",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+                                                  "question": {
+			"questionID": "Q18",
+			"questionText": "You cool with that??",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "Sure",
+						"barvalue": "15",
+						"response": "cool cool",
+						"nextQuestionID": "Q19",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Do i have to pay?",
+						"barvalue": "-15",
+						"response": "Nononononono of course not.. Ill cover it!",
+						"nextQuestionID": "Q19",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+        {
+                                                  "question": {
+			"questionID": "Q19",
+			"questionText": "Sooo theres two planes available right now do you wanna go to the beautiful country of France! ooorrrr........... Wyoming",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "France",
+						"barvalue": "15",
+						"response": "Good choice, good choice!",
+						"nextQuestionID": "Q20",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Wyoming",
+						"barvalue": "-15",
+						"response": "Uh ok ok.",
+						"nextQuestionID": "Q20",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+         {
+                                                  "question": {
+			"questionID": "Q20",
+			"questionText": "Well our gateway to Wyomings waiting lets go!",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "On my way!",
+						"barvalue": "15",
+						"response": "TO WYOOOOMING!",
+						"nextQuestionID": "Q22",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Ah just wait a sec",
+						"barvalue": "-15",
+						"response": "WE DONT HAVE A SEC LETS GOOOO.",
+						"nextQuestionID": "Q22",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				}
+
+			]
+		}
+	},
+                            {   "question": {
+			"questionID": "Q2",
+			"questionText": "Well our gateway to France is waiting lets go!",
+			"options": [{
+					"option": {
+						"optionID": "O9",
+						"optionText": "On my way!",
+						"barvalue": "15",
+						"response": "TO WYOOOOMING!",
+						"nextQuestionID": "Q23",
+						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+					}
+				},
+				{
+					"option": {
+						"optionID": "O10",
+						"optionText": "Ah just wait a sec",
+						"barvalue": "-15",
+						"response": "WE DONT HAVE A SEC LETS GOOOO.",
+						"nextQuestionID": "Q23",
 						"optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
 					}
 				}
@@ -469,4 +580,5 @@
 			]
 		}
 	}
+
 ]
