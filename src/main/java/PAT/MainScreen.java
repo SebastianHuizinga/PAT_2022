@@ -117,6 +117,12 @@ public class MainScreen extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
 
         handleButtonAction((JButton) evt.getSource());
+        if (currentQuestion.questionID.equals("Q26")) {
+            BirdMiniGame birdgame = new BirdMiniGame();
+            birdgame.setVisible(true);
+            
+            
+        }
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -142,9 +148,17 @@ public class MainScreen extends javax.swing.JFrame {
             int val = Integer.parseInt(currenOption.barvalue);
             bar_value += val;
             loveBar.setValue(bar_value);
+         
+                
+            
+            
         } else {
             setQuestionForId(currenOption.nextQuestionID);
-            
+               if (currentQuestion.questionImage != "") {
+                ImageIcon icon2 = new ImageIcon(currentQuestion.questionImage);
+                imagearea.setIcon(icon2);
+                   System.out.println(currentQuestion.questionImage);
+               }
             
         }
     }

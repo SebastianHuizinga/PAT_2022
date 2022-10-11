@@ -14,6 +14,7 @@ public class GatorQuestion {
     public String questionID;
     public GatorOption[] options;
     public String image;
+    public String questionImage;
     
     public String toString(){
         String ret = "\n--------------------------";

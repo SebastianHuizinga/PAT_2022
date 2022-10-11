@@ -69,6 +69,7 @@ public class ChatManager {
         GatorQuestion gatorQuestion = new GatorQuestion();
         gatorQuestion.questionID = (String) (questionObj.get("questionID"));
         gatorQuestion.questionText = (String) (questionObj.get("questionText"));
+        gatorQuestion.questionImage = (String)(questionObj.get("questionImage"));
 
         //array used for options
         JSONArray optionArray = (JSONArray) questionObj.get("options");
