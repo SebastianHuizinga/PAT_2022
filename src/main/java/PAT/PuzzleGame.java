@@ -1,6 +1,8 @@
 package PAT;
 
 import java.util.ArrayList;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /*
@@ -18,10 +20,10 @@ public class PuzzleGame extends javax.swing.JFrame {
      */
     public PuzzleGame() {
         initComponents();
-        jLabel1.setVisible(false);
-        jButton1.setVisible(false);
-        jButton3.setVisible(false);
-        jLabel3.setVisible(false);
+
+        solvebutt.setVisible(false);
+        denybutt.setVisible(false);
+        allitalk.setVisible(false);
 
         /**
          *
@@ -59,11 +61,21 @@ public class PuzzleGame extends javax.swing.JFrame {
     int Counter;
 
     public void ForceSolve() {
-        if (Counter % 5 == 0) {
-            jButton1.setVisible(true);
-            jButton3.setVisible(true);
-            jLabel3.setVisible(true);
+        ImageIcon iconAnnoyed = new ImageIcon("src//main//resources//images//passportannoyed.png");
+        ImageIcon iconRage = new ImageIcon("src//main//resources//images//passportrage.png");
+        if (Counter % 5 == 0 && Counter < 20) {
 
+            AlliFace.setIcon(iconAnnoyed);
+            allitalk.setVisible(true);
+            allitalk.setText("COME ON ALREADY");
+        } else if (20 < Counter && Counter % 5 == 0) {
+            AlliFace.setIcon(iconRage);
+            allitalk.setVisible(true);
+
+            allitalk.setText("LET ME JUST DO IT");
+
+            solvebutt.setVisible(true);
+            denybutt.setVisible(true);
         }
 
     }
@@ -75,6 +87,10 @@ public class PuzzleGame extends javax.swing.JFrame {
 
             Butt2.setText(Butt1.getText());
             Butt1.setText("");
+            Icon imag1 = Butt1.getIcon();
+            Icon image2 = Butt2.getIcon();
+            Butt1.setIcon(image2);
+            Butt2.setIcon(imag1);
         }
 
     }
@@ -95,7 +111,7 @@ public class PuzzleGame extends javax.swing.JFrame {
 
         if (b1 == "1" && b2 == "2" && b3 == "3" && b4 == "4" && b5 == "5" && b6 == "6"
                 && b7 == "7" && b8 == "8" && b9 == "9" && b10 == "10" && b11 == "11") {
-            jLabel1.setVisible(true);
+            System.out.println("win");
 
         }
         Counter += 1;
@@ -105,7 +121,6 @@ public class PuzzleGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         button3 = new javax.swing.JButton();
         button1 = new javax.swing.JButton();
@@ -119,12 +134,11 @@ public class PuzzleGame extends javax.swing.JFrame {
         button11 = new javax.swing.JButton();
         button12 = new javax.swing.JButton();
         button9 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        solvebutt = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        denybutt = new javax.swing.JButton();
+        allitalk = new javax.swing.JLabel();
+        AlliFace = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -134,23 +148,9 @@ public class PuzzleGame extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1358, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
-
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 0, 0)));
 
+        button3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass3.png"))); // NOI18N
         button3.setText("3");
         button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,6 +158,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass1.png"))); // NOI18N
         button1.setText("1");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +166,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass4.png"))); // NOI18N
         button4.setText("4");
         button4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,6 +174,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass2.png"))); // NOI18N
         button2.setText("2");
         button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,6 +182,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass6.png"))); // NOI18N
         button6.setText("6");
         button6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +190,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass7.png"))); // NOI18N
         button7.setText("7");
         button7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +198,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass8.png"))); // NOI18N
         button8.setText("8");
         button8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +206,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass5.png"))); // NOI18N
         button5.setText("5");
         button5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,6 +214,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass10.png"))); // NOI18N
         button10.setText("10");
         button10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,6 +222,7 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass11.png"))); // NOI18N
         button11.setText("11");
         button11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,16 +236,14 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
+        button9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portpass9.png"))); // NOI18N
         button9.setText("9");
+        button9.setAutoscrolls(true);
         button9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button9ActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("WIN");
-
-        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -244,98 +251,93 @@ public class PuzzleGame extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(399, 399, 399))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(button11, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(button12, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(96, 96, 96)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(286, 286, 286))))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(button11, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(button12, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button12, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button11, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addContainerGap(217, Short.MAX_VALUE))
+                        .addComponent(button11, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(button12, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(94, 94, 94))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 600, 320));
 
-        jButton1.setText("sove");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        solvebutt.setText("sove");
+        solvebutt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                solvebuttActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 130, 70, 80));
+        getContentPane().add(solvebutt, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 80, 90));
 
-        jButton2.setText("shuffle");
+        jButton2.setText("SHAKE IT AROUND!");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 328, 450, 199));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, 170, 80));
 
-        jButton3.setText("no");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        denybutt.setText("no");
+        denybutt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                denybuttActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 130, 110, 90));
+        getContentPane().add(denybutt, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, 80, 90));
 
-        jLabel3.setText("COME ON");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 130, -1, -1));
+        allitalk.setText("COME ON");
+        getContentPane().add(allitalk, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 160, -1));
+
+        AlliFace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/passportneutral.png"))); // NOI18N
+        getContentPane().add(AlliFace, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 170, 94));
 
         pack();
         setLocationRelativeTo(null);
@@ -347,13 +349,6 @@ public class PuzzleGame extends javax.swing.JFrame {
         Move(button3, button7);
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button3ActionPerformed
-
-    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        Move(button4, button3);
-        Move(button4, button8);
-        SolveState();
-// TODO add your handling code here:
-    }//GEN-LAST:event_button4ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         Move(button1, button2);
@@ -388,6 +383,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         Move(button8, button4);
         Move(button8, button7);
         Move(button8, button12);
+
         SolveState();// TODO add your handling code here:
     }//GEN-LAST:event_button8ActionPerformed
 
@@ -427,10 +423,29 @@ public class PuzzleGame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        ArrayList<JButton> buttons = new ArrayList<JButton>();
+        buttons.add(button1);
+        buttons.add(button2);
+        buttons.add(button3);
+        buttons.add(button4);
+        buttons.add(button5);
+        buttons.add(button6);
+        buttons.add(button7);
+        buttons.add(button8);
+        buttons.add(button9);
+        buttons.add(button10);
+        buttons.add(button11);
+        buttons.add(button12);
+
+        for (int i = 0; i < 2000; i++) {
+            int randnum = (int) (Math.random() * ((12) - 0) + 0);
+            int randnum2 = (int) (Math.random() * ((12) - 0) + 0);
+
+            Move(buttons.get(randnum), buttons.get(randnum2));
+        }          // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void solvebuttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solvebuttActionPerformed
         button1.setText("1");
         button2.setText("2");
         button3.setText("3");
@@ -443,20 +458,26 @@ public class PuzzleGame extends javax.swing.JFrame {
         button10.setText("10");
         button11.setText("11");
         button12.setText("");
-        jLabel3.setText("haha i did it heeheh haha i love being a placeholder");
-        jLabel1.setText("won?");
-        jLabel1.setVisible(true);
-        jButton1.setVisible(false);
-        jButton3.setVisible(false);
+        allitalk.setText("haha i did it heeheh haha i love being a placeholder");
+
+        solvebutt.setVisible(false);
+        denybutt.setVisible(false);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_solvebuttActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void denybuttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_denybuttActionPerformed
 
-        jButton1.setVisible(false);
-        jButton3.setVisible(false);
-        jLabel3.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        solvebutt.setVisible(false);
+        denybutt.setVisible(false);
+        allitalk.setVisible(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_denybuttActionPerformed
+
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+        Move(button4, button3);
+        Move(button4, button8);
+        SolveState();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -494,6 +515,8 @@ public class PuzzleGame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AlliFace;
+    private javax.swing.JLabel allitalk;
     private javax.swing.JButton button1;
     private javax.swing.JButton button10;
     private javax.swing.JButton button11;
@@ -506,13 +529,9 @@ public class PuzzleGame extends javax.swing.JFrame {
     private javax.swing.JButton button7;
     private javax.swing.JButton button8;
     private javax.swing.JButton button9;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton denybutt;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton solvebutt;
     // End of variables declaration//GEN-END:variables
 }

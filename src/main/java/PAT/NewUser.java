@@ -39,7 +39,7 @@ public class NewUser extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         name = new javax.swing.JLabel();
         namefield = new javax.swing.JTextField();
-        confirm = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         picbox = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -62,13 +62,14 @@ public class NewUser extends javax.swing.JFrame {
         });
         jPanel1.add(namefield, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 270, 40));
 
-        confirm.setText("Thats me");
-        confirm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmActionPerformed(evt);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/certify.png"))); // NOI18N
+        jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 102)));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
             }
         });
-        jPanel1.add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 399, 227, 130));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 200, 210));
 
         picbox.setText("SO I CAN SEE IT");
         picbox.setMaximumSize(new java.awt.Dimension(190, 290));
@@ -105,7 +106,7 @@ public class NewUser extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,15 +118,6 @@ public class NewUser extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
-        String user_name = namefield.getText();
-        System.out.println(user_name);
-        UserManager.addUser(user_name);
-        MainScreen main = new MainScreen();
-        main.setVisible(true);
-        dispose();// TODO add your handling code here:
-    }//GEN-LAST:event_confirmActionPerformed
 
     private void namefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namefieldActionPerformed
         // TODO add your handling code here:
@@ -152,6 +144,15 @@ public class NewUser extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon(selfie);
         picbox.setIcon(icon);   // TODO add your handling code here:
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        String user_name = namefield.getText();
+        System.out.println(user_name);
+        UserManager.addUser(user_name);
+        MainScreen main = new MainScreen();
+        main.setVisible(true);
+        dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -203,11 +204,11 @@ public class NewUser extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton confirm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel name;
     private javax.swing.JTextField namefield;

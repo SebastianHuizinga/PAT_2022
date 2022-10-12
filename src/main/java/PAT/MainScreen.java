@@ -117,9 +117,9 @@ public class MainScreen extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
 
         handleButtonAction((JButton) evt.getSource());
-        if (currentQuestion.questionID.equals("Q26")) {
-            BirdMiniGame birdgame = new BirdMiniGame();
-            birdgame.setVisible(true);
+        if (currentQuestion.questionID.equals("Q35")) {
+            PuzzleGame passport = new PuzzleGame();
+            passport.setVisible(true);
             
             
         }
