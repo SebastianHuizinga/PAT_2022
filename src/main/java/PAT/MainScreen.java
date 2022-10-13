@@ -120,8 +120,7 @@ public class MainScreen extends javax.swing.JFrame {
         if (currentQuestion.questionID.equals("Q35")) {
             PuzzleGame passport = new PuzzleGame();
             passport.setVisible(true);
-            
-            
+
         }
     }//GEN-LAST:event_button1ActionPerformed
 
@@ -143,26 +142,22 @@ public class MainScreen extends javax.swing.JFrame {
             currenOption = (target == this.button1) ? currentQuestion.options[0] : currentQuestion.options[1];
             dialogue_area.setText(currenOption.response);
             button1.setText("Next");
-             ImageIcon icon = new ImageIcon(currenOption.optionImage);
-             imagearea.setIcon(icon);
+            ImageIcon icon = new ImageIcon(currenOption.optionImage);
+            imagearea.setIcon(icon);
             int val = Integer.parseInt(currenOption.barvalue);
             bar_value += val;
             loveBar.setValue(bar_value);
-         
-                
-            
-            
+
         } else {
             setQuestionForId(currenOption.nextQuestionID);
-               if (currentQuestion.questionImage != "") {
+            if (currentQuestion.questionImage != "") {
                 ImageIcon icon2 = new ImageIcon(currentQuestion.questionImage);
                 imagearea.setIcon(icon2);
-                   System.out.println(currentQuestion.questionImage);
-               }
-            
+                System.out.println(currentQuestion.questionImage);
+            }
+
         }
     }
-
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         LandingScreen home = new LandingScreen();
