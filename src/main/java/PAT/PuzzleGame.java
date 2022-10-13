@@ -15,6 +15,18 @@ import javax.swing.JButton;
  */
 public class PuzzleGame extends javax.swing.JFrame {
 
+    Icon image1;
+    Icon image2;
+    Icon image3;
+    Icon image4;
+    Icon image5;
+    Icon image6;
+    Icon image7;
+    Icon image8;
+    Icon image9;
+    Icon image10;
+    Icon image11;
+
     /**
      * Creates new form PuzzleGame
      */
@@ -28,6 +40,18 @@ public class PuzzleGame extends javax.swing.JFrame {
         /**
          *
          */
+        image1 = button1.getIcon();
+        image2 = button2.getIcon();
+        image3 = button3.getIcon();
+        image4 = button4.getIcon();
+        image5 = button5.getIcon();
+        image6 = button6.getIcon();
+        image7 = button7.getIcon();
+        image8 = button8.getIcon();
+        image9 = button9.getIcon();
+        image10 = button10.getIcon();
+        image11 = button11.getIcon();
+
         ArrayList<JButton> buttons = new ArrayList<JButton>();
         buttons.add(button1);
         buttons.add(button2);
@@ -95,7 +119,7 @@ public class PuzzleGame extends javax.swing.JFrame {
 
     }
 
-    public void SolveState() {
+    public void isSolved() {
 
         String b1 = button1.getText();
         String b2 = button2.getText();
@@ -347,20 +371,20 @@ public class PuzzleGame extends javax.swing.JFrame {
         Move(button3, button2);
         Move(button3, button4);
         Move(button3, button7);
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         Move(button1, button2);
         Move(button1, button5);
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         Move(button2, button3);
         Move(button2, button6);
         Move(button2, button1);
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
@@ -368,7 +392,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         Move(button6, button5);
         Move(button6, button7);
         Move(button6, button10);
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button6ActionPerformed
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
@@ -376,7 +400,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         Move(button7, button6);
         Move(button7, button8);
         Move(button7, button11);
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button7ActionPerformed
 
     private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
@@ -384,7 +408,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         Move(button8, button7);
         Move(button8, button12);
 
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button8ActionPerformed
 
     private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
@@ -397,7 +421,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         Move(button10, button9);
         Move(button10, button6);
         Move(button10, button11);
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button10ActionPerformed
 
     private void button11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button11ActionPerformed
@@ -409,13 +433,13 @@ public class PuzzleGame extends javax.swing.JFrame {
     private void button12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button12ActionPerformed
         Move(button12, button8);
         Move(button12, button11);
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button12ActionPerformed
 
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
         Move(button9, button5);
         Move(button9, button10);
-        SolveState();// TODO add your handling code here:
+        isSolved();// TODO add your handling code here:
     }//GEN-LAST:event_button9ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -458,6 +482,19 @@ public class PuzzleGame extends javax.swing.JFrame {
         button10.setText("10");
         button11.setText("11");
         button12.setText("");
+        button1.setIcon(image1);
+        button2.setIcon(image2);
+        button3.setIcon(image3);
+        button4.setIcon(image4);
+        button5.setIcon(image5);
+        button6.setIcon(image6);
+        button7.setIcon(image7);
+        button8.setIcon(image8);
+        button9.setIcon(image9);
+        button10.setIcon(image10);
+        button11.setIcon(image11);
+        button12.setIcon(null);
+
         allitalk.setText("haha i did it heeheh haha i love being a placeholder");
 
         solvebutt.setVisible(false);
@@ -475,7 +512,7 @@ public class PuzzleGame extends javax.swing.JFrame {
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         Move(button4, button3);
         Move(button4, button8);
-        SolveState();
+        isSolved();
         // TODO add your handling code here:
     }//GEN-LAST:event_button4ActionPerformed
 

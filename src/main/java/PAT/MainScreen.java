@@ -27,7 +27,7 @@ public class MainScreen extends javax.swing.JFrame {
 
     private ChatManager chatManager;
     private GatorQuestion currentQuestion;
-    private GatorOption currenOption;
+    private GatorOption currentOption;
     private boolean hasResponded = false;
 
     public MainScreen() {
@@ -120,13 +120,24 @@ public class MainScreen extends javax.swing.JFrame {
         if (currentQuestion.questionID.equals("Q35")) {
             PuzzleGame passport = new PuzzleGame();
             passport.setVisible(true);
-
+        }
+        if (currentQuestion.questionID.equals("Q50")) {
+            BirdMiniGame birdgame = new BirdMiniGame();
+            birdgame.setVisible(true);
         }
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
 
         handleButtonAction((JButton) evt.getSource());
+        if (currentQuestion.questionID.equals("Q35")) {
+            PuzzleGame passport = new PuzzleGame();
+            passport.setVisible(true);
+        }
+        if (currentQuestion.questionID.equals("Q50")) {
+            BirdMiniGame birdgame = new BirdMiniGame();
+            birdgame.setVisible(true);
+        }
     }//GEN-LAST:event_button2ActionPerformed
 
     private void handleButtonAction(JButton target) {
@@ -139,17 +150,18 @@ public class MainScreen extends javax.swing.JFrame {
         hasResponded = !hasResponded;
         button2.setVisible(hasResponded);
         if (!hasResponded) {
-            currenOption = (target == this.button1) ? currentQuestion.options[0] : currentQuestion.options[1];
-            dialogue_area.setText(currenOption.response);
+
+            currentOption = (target == this.button1) ? currentQuestion.options[0] : currentQuestion.options[1];
+            dialogue_area.setText(currentOption.response);
             button1.setText("Next");
-            ImageIcon icon = new ImageIcon(currenOption.optionImage);
+            ImageIcon icon = new ImageIcon(currentOption.optionImage);
             imagearea.setIcon(icon);
-            int val = Integer.parseInt(currenOption.barvalue);
+            int val = Integer.parseInt(currentOption.barvalue);
             bar_value += val;
             loveBar.setValue(bar_value);
 
         } else {
-            setQuestionForId(currenOption.nextQuestionID);
+            setQuestionForId(currentOption.nextQuestionID);
             if (currentQuestion.questionImage != "") {
                 ImageIcon icon2 = new ImageIcon(currentQuestion.questionImage);
                 imagearea.setIcon(icon2);
