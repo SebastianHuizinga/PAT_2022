@@ -1787,10 +1787,138 @@
                 }
             ]
         }
+    },{ "question": {
+            "questionID": "Q64",
+            "questionText": "Wanna get a picture?",
+            "questionImage": "",
+            "options": [{
+                    "option": {
+                        "optionID": "O9",
+                        "optionText": "Sure!",
+                        "barvalue": "15",
+                        "response": "say cheese!",
+                        "nextQuestionID": "Q65",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                },
+                {
+                    "option": {
+                        "optionID": "O10",
+                        "optionText": "Im good",
+                        "barvalue": "-15",
+                        "response": "TOO BAD!",
+                        "nextQuestionID": "Q65",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                }
+            ]
+        }
+    },{ "question": {
+            "questionID": "Q65",
+            "questionText": "Hey are you ok? You look a little light hearted",
+            "questionImage": "",
+            "options": [{
+                    "option": {
+                        "optionID": "O9",
+                        "optionText": "yeaauhdhh",
+                        "barvalue": "15",
+                        "response": "uh oh",
+                        "nextQuestionID": "Q66",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                },
+                {
+                    "option": {
+                        "optionID": "O10",
+                        "optionText": ".....",
+                        "barvalue": "-15",
+                        "response": "Oh no",
+                        "nextQuestionID": "Q66",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                }
+            ]
+        }
+    },{ "question": {
+            "questionID": "Q66",
+            "questionText": "...........",
+            "questionImage": "",
+            "options": [{
+                    "option": {
+                        "optionID": "O9",
+                        "optionText": ".....................",
+                        "barvalue": "15",
+                        "response": "say cheese!",
+                        "nextQuestionID": "Q67",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                },
+                {
+                    "option": {
+                        "optionID": "O10",
+                        "optionText": "...............",
+                        "barvalue": "-15",
+                        "response": "TOO BAD!",
+                        "nextQuestionID": "Q67",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                }
+            ]
+        }
+    },
+    { "question": {
+            "questionID": "67",
+            "questionText": "Huh, what happened. Was that all a dream?",
+            "questionImage": "",
+            "options": [{
+                    "option": {
+                        "optionID": "O9",
+                        "optionText": "Tell yourself it was a dream",
+                        "barvalue": "15",
+                        "response": "Huh weird",
+                        "nextQuestionID": "Q68",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                },
+                {
+                    "option": {
+                        "optionID": "O10",
+                        "optionText": "Tell yourself it wasnt a dream",
+                        "barvalue": "-15",
+                        "response": "No it couldnt be? could it?",
+                        "nextQuestionID": "Q68",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                }
+            ]
+        }
+    },{ "question": {
+            "questionID": "Q68",
+            "questionText": "\"Where am i?\"",
+            "questionImage": "",
+            "options": [{
+                    "option": {
+                        "optionID": "O9",
+                        "optionText": "lie back down",
+                        "barvalue": "15",
+                        "response": "Hey my little swampy wompy wake up",
+                        "nextQuestionID": "Q1",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                },
+                {
+                    "option": {
+                        "optionID": "O10",
+                        "optionText": "Try get up",
+                        "barvalue": "-15",
+                        "response": "Hey my little swampy wompy i see your awake again",
+                        "nextQuestionID": "Q1",
+                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
+                    }
+                }
+            ]
+        }
     }
-    
-    
-   
 ]
 
 
