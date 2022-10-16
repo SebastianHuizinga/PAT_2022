@@ -15,6 +15,8 @@ public class GatorQuestion {
     public GatorOption[] options;
     public String image;
     public String questionImage;
+    public String birdGame;
+    public String puzzleGame;
     
     public String toString(){
         String ret = "\n--------------------------";

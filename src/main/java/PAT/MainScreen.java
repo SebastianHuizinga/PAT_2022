@@ -6,6 +6,10 @@ package PAT;
 
 import backend.GatorQuestion;
 import backend.ChatManager;
+import backend.GameMethods;
+import PAT.NewUser;
+import backend.GameMethods;
+import backend.UserManager;
 import javax.swing.JProgressBar;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -24,17 +28,27 @@ public class MainScreen extends javax.swing.JFrame {
     private int bar_value = 0;
     private int ans_val1 = 0;
     private int ans_val2 = 0;
+    private boolean hasPuzzled = false;
 
+    private GameMethods gameMethods;
     private ChatManager chatManager;
     private GatorQuestion currentQuestion;
     private GatorOption currentOption;
-    private boolean hasResponded = false;
-
+    private NewUser user;
+    private boolean hasResponded;
+    private boolean hasBirded;
+    private int currentBarVal;
+    
+     public int getBarValue() {
+        return currentBarVal;
+    }
+    
     public MainScreen() {
         initComponents();
-
+        gameMethods = new GameMethods();
         chatManager = new ChatManager();
-
+        hasBirded = false;
+        hasResponded = false;
         hasResponded = true;
         setQuestionForId("Q1");
 
@@ -53,7 +67,6 @@ public class MainScreen extends javax.swing.JFrame {
             button2.setText(currentQuestion.options[1].optionText);
             System.out.println(currentQuestion);
         }
-
     }
 
     /**
@@ -71,9 +84,13 @@ public class MainScreen extends javax.swing.JFrame {
         button2 = new javax.swing.JButton();
         loveBar = new javax.swing.JProgressBar();
         jButton1 = new javax.swing.JButton();
+        nameplace = new javax.swing.JLabel();
+        picplace = new javax.swing.JLabel();
         imagearea = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1315, 730));
+        setPreferredSize(new java.awt.Dimension(1315, 950));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         dialogue_area.setEditable(false);
@@ -81,7 +98,7 @@ public class MainScreen extends javax.swing.JFrame {
         dialogue_area.setRows(5);
         jScrollPane1.setViewportView(dialogue_area);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 820, 190));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, 820, 190));
 
         button1.setText("PLACEHOLDER");
         button1.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +106,7 @@ public class MainScreen extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        getContentPane().add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 520, 280, 90));
+        getContentPane().add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 700, 280, 90));
 
         button2.setText("PLACEHOLDER");
         button2.addActionListener(new java.awt.event.ActionListener() {
@@ -97,10 +114,10 @@ public class MainScreen extends javax.swing.JFrame {
                 button2ActionPerformed(evt);
             }
         });
-        getContentPane().add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 620, 280, 90));
+        getContentPane().add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 800, 280, 90));
 
         loveBar.setToolTipText("");
-        getContentPane().add(loveBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 490));
+        getContentPane().add(loveBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 680));
 
         jButton1.setText("Quit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,8 +125,12 @@ public class MainScreen extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 10, -1, 50));
-        getContentPane().add(imagearea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 530));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 10, -1, 50));
+
+        nameplace.setFont(new java.awt.Font("MV Boli", 0, 36)); // NOI18N
+        getContentPane().add(nameplace, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 250, 100));
+        getContentPane().add(picplace, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 410, 190, 290));
+        getContentPane().add(imagearea, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1315, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,34 +138,22 @@ public class MainScreen extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
 
         handleButtonAction((JButton) evt.getSource());
-        if (currentQuestion.questionID.equals("Q35")) {
-            PuzzleGame passport = new PuzzleGame();
-            passport.setVisible(true);
-        }
-        if (currentQuestion.questionID.equals("Q50")) {
-            BirdMiniGame birdgame = new BirdMiniGame();
-            birdgame.setVisible(true);
-        }
+
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
 
         handleButtonAction((JButton) evt.getSource());
-        if (currentQuestion.questionID.equals("Q35")) {
-            PuzzleGame passport = new PuzzleGame();
-            passport.setVisible(true);
-        }
-        if (currentQuestion.questionID.equals("Q50")) {
-            BirdMiniGame birdgame = new BirdMiniGame();
-            birdgame.setVisible(true);
-        }
+
+
     }//GEN-LAST:event_button2ActionPerformed
 
     private void handleButtonAction(JButton target) {
         if (this.currentQuestion == null) {
-            target.setBackground(Color.RED);
-            dialogue_area.setText("Gator cannot find JSON question!!");
-            target.setText("gator eats you");
+            EndingScreen end = new EndingScreen();
+            end.setVisible(true);
+            MainScreen main = new MainScreen();
+            main.dispose();
             return;
         }
         hasResponded = !hasResponded;
@@ -158,14 +167,52 @@ public class MainScreen extends javax.swing.JFrame {
             imagearea.setIcon(icon);
             int val = Integer.parseInt(currentOption.barvalue);
             bar_value += val;
-            loveBar.setValue(bar_value);
-
+            if (bar_value > 100) {
+                bar_value = 100;
+            }
+            if (bar_value < 0) {
+                bar_value = 0;
+                
+            }
+             currentBarVal = bar_value;
+             loveBar.setValue(bar_value);
+             System.out.println(bar_value);
+             System.out.println(currentBarVal);
+           
+            
+           
+            
         } else {
             setQuestionForId(currentOption.nextQuestionID);
             if (currentQuestion.questionImage != "") {
                 ImageIcon icon2 = new ImageIcon(currentQuestion.questionImage);
                 imagearea.setIcon(icon2);
                 System.out.println(currentQuestion.questionImage);
+
+                if (currentQuestion.puzzleGame == null) {
+
+                } else if (currentQuestion.puzzleGame.equals("true") && hasPuzzled == false) {
+                    PuzzleGame passport = new PuzzleGame();
+                    passport.setVisible(true);
+                    hasPuzzled = true;
+                }
+                if (currentQuestion.birdGame == null) {
+                } else if (currentQuestion.birdGame.equals("true") && hasBirded == false) {
+                    BirdMiniGame birdgame = new BirdMiniGame();
+                    birdgame.setVisible(true);
+                    hasBirded = true;
+                }
+
+                if (currentOption.pic == null) {
+                    picplace.setVisible(false);
+                    nameplace.setVisible(false);
+
+                } else if (currentOption.pic.equals("true")) {
+
+                    gameMethods.getVacationPicture(UserManager.getUserPicNumber(), nameplace, picplace);
+                    picplace.setVisible(true);
+                    nameplace.setVisible(true);
+                }
             }
 
         }
@@ -223,5 +270,7 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JProgressBar loveBar;
+    private javax.swing.JLabel nameplace;
+    private javax.swing.JLabel picplace;
     // End of variables declaration//GEN-END:variables
 }

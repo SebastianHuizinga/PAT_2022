@@ -19,8 +19,13 @@ import java.util.logging.Logger;
  */
 public class UserManager {
     
+    private static int currentUserPicNumber;
+    
+    public static int getUserPicNumber() {
+        return currentUserPicNumber;
+    }
 
-    public static void addUser(String name){
+    public static void setPlayerName(String name){
         try {
             File file = new File("data//login.txt");
             FileWriter filewr = new FileWriter(file);
@@ -34,7 +39,8 @@ public class UserManager {
         
         
     }
-      public static String PicChanger(int picturenum){
+      public static String PicChanger(int pictureNumber){
+          currentUserPicNumber = pictureNumber;
           File picfile = new File("data//id_cards.txt");
           String pic = "";
         try {
@@ -45,7 +51,7 @@ public class UserManager {
                     Scanner linesc = new Scanner(line).useDelimiter("#");
                
                 int picint = linesc.nextInt();
-                if (picint == picturenum) {
+                if (picint == pictureNumber) {
                     pic = linesc.next();
                 }
                 linesc.close();

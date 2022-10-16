@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
 /**
@@ -18,6 +19,9 @@ import javax.swing.Timer;
  */
 public final class BirdMiniGame extends javax.swing.JFrame {
 
+    
+    
+    
     Timer stopwatch;
     int count = 0;
     int delay = 1000;
@@ -28,11 +32,10 @@ public final class BirdMiniGame extends javax.swing.JFrame {
             if (count == 0) {
                 stopwatch.stop();
 
-                BirdLossScreen loss = new BirdLossScreen();
-                System.out.println("Lose");
-                Timer.setText("out of time");
-                loss.setVisible(true);
-                dispose();
+               score.setText("ILL GET THE REST OF THEM NOW GET BACK BEFORE YOU GET HIT!!");
+               jButton1.setVisible(true);
+                            
+             
 
             } else {
                 Timer.setText(" " + count + "seconds");
@@ -61,6 +64,8 @@ public final class BirdMiniGame extends javax.swing.JFrame {
     public BirdMiniGame() {
         initComponents();
         cursor.setVisible(false);
+        jButton1.setVisible(false);
+       
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         x_size = screenSize.getWidth();
@@ -78,13 +83,12 @@ public final class BirdMiniGame extends javax.swing.JFrame {
         int timerX = clock_icon.getX() + clock_icon.getWidth() / 2 + Timer.getWidth() / 2;
         int timerY = clock_icon.getY() + clock_icon.getHeight() / 2 + Timer.getHeight() / 2;
 
-        Timer.setLocation(timerX, timerY);
-        clock_icon.setLocation(Timer.getLocation());
 
         //clock_icon.setLocation(Timer.getLocation());
         startTimer(90);
 
     }
+  
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -92,12 +96,15 @@ public final class BirdMiniGame extends javax.swing.JFrame {
 
         jToggleButton1 = new javax.swing.JToggleButton();
         cursor = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         Timer = new javax.swing.JLabel();
         score = new javax.swing.JLabel();
         birdo = new javax.swing.JLabel();
         clock_icon = new javax.swing.JLabel();
         birdo1 = new javax.swing.JLabel();
         birdo2 = new javax.swing.JLabel();
+        alliIcon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -125,11 +132,22 @@ public final class BirdMiniGame extends javax.swing.JFrame {
         getContentPane().add(cursor);
         cursor.setBounds(440, 410, 200, 220);
 
+        jButton1.setText("BACK TO THE PLANE!");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(440, 10, 220, 90);
+
         Timer.setFont(new java.awt.Font("MV Boli", 0, 34)); // NOI18N
         getContentPane().add(Timer);
-        Timer.setBounds(430, 10, 190, 90);
+        Timer.setBounds(230, 10, 190, 90);
+
+        score.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         getContentPane().add(score);
-        score.setBounds(30, 100, 560, 70);
+        score.setBounds(20, 180, 560, 70);
 
         birdo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/birdohat.png"))); // NOI18N
         birdo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,7 +160,7 @@ public final class BirdMiniGame extends javax.swing.JFrame {
 
         clock_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clock.png"))); // NOI18N
         getContentPane().add(clock_icon);
-        clock_icon.setBounds(460, 50, 200, 90);
+        clock_icon.setBounds(230, 0, 200, 90);
 
         birdo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/birdoknight.png"))); // NOI18N
         birdo1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,6 +179,15 @@ public final class BirdMiniGame extends javax.swing.JFrame {
         });
         getContentPane().add(birdo2);
         birdo2.setBounds(460, 230, 150, 150);
+
+        alliIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/birdscore.png"))); // NOI18N
+        alliIcon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
+        getContentPane().add(alliIcon);
+        alliIcon.setBounds(-20, 0, 240, 170);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DeathIsNear.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 2222, 1200);
 
         pack();
         setLocationRelativeTo(null);
@@ -198,20 +225,24 @@ public final class BirdMiniGame extends javax.swing.JFrame {
         birdo2.setLocation(x_btn3, y_btn3);
         birds_hit += 1;
         if (birds_hit > 0 && birds_hit < 5) {
-            score.setText("GET IT! " + birds_hit + " HITS!");
+            score.setText("GET IT! " + birds_hit + " HITS!");            
         } else if (birds_hit >= 5 && birds_hit < 10) {
             score.setText("KEEP GOING! " + birds_hit + " HITS!");
         } else if (birds_hit >= 10 && birds_hit < 20) {
+            ImageIcon picture = new ImageIcon("src//main//resources//images//birdscore1.png");
+            alliIcon.setIcon(picture);
             score.setText("ALMOST THERE! " + birds_hit + " HITS!");
         } else if (birds_hit >= 20 && birds_hit < 29) {
             score.setText("THE TIME IS COMINGGG! " + birds_hit + " HITS!");
+             
+                    
         } else if (birds_hit == 29) {
             score.setText("ONE MORE! " + birds_hit + " HITS!");
+            ImageIcon picture = new ImageIcon("src//main//resources//images//birdscore2.png");
+            alliIcon.setIcon(picture);
         } else if (birds_hit == 30) {
             score.setText("WOWEOWEOWEOWEOW");
-            BirdWinScreen gw = new BirdWinScreen();
-            gw.setVisible(true);
-            dispose();
+             jButton1.setVisible(true);
 
     }//GEN-LAST:event_birdoMouseClicked
     }
@@ -240,9 +271,7 @@ public final class BirdMiniGame extends javax.swing.JFrame {
             score.setText("ONE MORE! " + birds_hit + " HITS!");
         } else if (birds_hit == 30) {
             score.setText("WOWEOWEOWEOWEOW");
-            BirdWinScreen gw = new BirdWinScreen();
-            gw.setVisible(true);
-            dispose();
+             jButton1.setVisible(true);
         }
     }//GEN-LAST:event_birdo1MouseClicked
 
@@ -270,12 +299,17 @@ public final class BirdMiniGame extends javax.swing.JFrame {
             score.setText("ONE MORE! " + birds_hit + " HITS!");
         } else if (birds_hit == 30) {
             score.setText("WOWEOWEOWEOWEOW");
-            BirdWinScreen gw = new BirdWinScreen();
-            gw.setVisible(true);
-            dispose();
+           jButton1.setVisible(true);
 
     }//GEN-LAST:event_birdo2MouseClicked
     }
+        
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      dispose();
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
 
     /**
      * @param args the command line arguments
@@ -315,11 +349,14 @@ public final class BirdMiniGame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Timer;
+    private javax.swing.JLabel alliIcon;
     private javax.swing.JLabel birdo;
     private javax.swing.JLabel birdo1;
     private javax.swing.JLabel birdo2;
     private javax.swing.JLabel clock_icon;
     private javax.swing.JLabel cursor;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel score;
     // End of variables declaration//GEN-END:variables

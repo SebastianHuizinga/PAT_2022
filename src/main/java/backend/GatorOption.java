@@ -16,6 +16,7 @@ public class GatorOption {
     public String optionImage;
     public String response;
     public String barvalue;
+    public String pic;
     
     public String toString(){
         String ret = "\n\toptionID: " + optionID;

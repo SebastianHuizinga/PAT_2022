@@ -70,7 +70,9 @@ public class ChatManager {
         gatorQuestion.questionID = (String) (questionObj.get("questionID"));
         gatorQuestion.questionText = (String) (questionObj.get("questionText"));
         gatorQuestion.questionImage = (String)(questionObj.get("questionImage"));
-
+        gatorQuestion.puzzleGame = (String)(questionObj.get("puzzle"));
+        gatorQuestion.birdGame = (String)(questionObj.get("birds"));
+        
         //array used for options
         JSONArray optionArray = (JSONArray) questionObj.get("options");
         gatorQuestion.options = new GatorOption[optionArray.size()];
@@ -93,6 +95,8 @@ public class ChatManager {
         gatorOption.optionText = (String) jsonOptionObject.get("optionText");
         gatorOption.response = (String) jsonOptionObject.get("response");
         gatorOption.barvalue = (String) jsonOptionObject.get("barvalue");
+        gatorOption.pic = (String) jsonOptionObject.get("pic");
+        
         return gatorOption;
     }
 
