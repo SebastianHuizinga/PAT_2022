@@ -18,6 +18,7 @@ public class LandingScreen extends javax.swing.JFrame {
      */
     public LandingScreen() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     public void close() {
@@ -38,7 +39,6 @@ public class LandingScreen extends javax.swing.JFrame {
         playbutton = new javax.swing.JButton();
         infobutton = new javax.swing.JButton();
         Closebutton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -55,7 +55,7 @@ public class LandingScreen extends javax.swing.JFrame {
                 playbuttonActionPerformed(evt);
             }
         });
-        getContentPane().add(playbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 230, 60));
+        getContentPane().add(playbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 230, 80));
 
         infobutton.setText("Info");
         infobutton.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +63,7 @@ public class LandingScreen extends javax.swing.JFrame {
                 infobuttonActionPerformed(evt);
             }
         });
-        getContentPane().add(infobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 230, 60));
+        getContentPane().add(infobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, 230, 80));
 
         Closebutton.setText("the close button");
         Closebutton.addActionListener(new java.awt.event.ActionListener() {
@@ -72,9 +72,6 @@ public class LandingScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Closebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 140, 70));
-
-        jButton1.setText("Load game");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 230, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GATORSCREEN.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -154,7 +151,6 @@ public class LandingScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Closebutton;
     private javax.swing.JButton infobutton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton playbutton;
     // End of variables declaration//GEN-END:variables

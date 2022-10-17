@@ -4,7 +4,6 @@
  */
 package PAT;
 
-
 import backend.GameMethods;
 import backend.UserManager;
 import PAT.MainScreen;
@@ -14,23 +13,23 @@ import PAT.MainScreen;
  * @author user-pc
  */
 public class EndingScreen extends javax.swing.JFrame {
-    
-     private GameMethods gameMethods;
-     private UserManager userManager;
-     private MainScreen mainScreen;
+
+    private GameMethods gameMethods;
+    private UserManager userManager;
+    private MainScreen mainScreen;
 
     /**
      * Creates new form EndingScreen
      */
     public EndingScreen() {
         initComponents();
-          mainScreen = new MainScreen();
-          gameMethods = new GameMethods();
-          userManager = new UserManager();
-        
-            gameMethods.End(100, jLabel1);
-            gameMethods.getEndPicture(UserManager.getUserPicNumber(), nameplace, picplace);
-                   
+        mainScreen = new MainScreen();
+        gameMethods = new GameMethods();
+        userManager = new UserManager();
+
+        gameMethods.End(mainScreen.getBarValue(), jLabel1);
+        gameMethods.getEndPicture(UserManager.getUserPicNumber(), nameplace, picplace);
+
     }
 
     /**
@@ -77,7 +76,7 @@ public class EndingScreen extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

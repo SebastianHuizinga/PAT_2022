@@ -12,7 +12,9 @@
                                 "response": "Alli",
                                 "nextQuestionID": "Q2",
                                 "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
-                            }
+                                
+                              
+                             }
                         },
                         {
                             "option": { 
@@ -1869,33 +1871,8 @@
                 }
             ]
         }
-    }, {
-        "question": {
-            "questionID": "Q64",
-            "questionText": "Wanna get a picture?",
-            "questionImage": "",
-            "options": [{
-                    "option": {
-                        "optionID": "O9",
-                        "optionText": "Sure!",
-                        "barvalue": "15",
-                        "response": "say cheese!",
-                        "nextQuestionID": "Q65",
-                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
-                    }
-                },
-                {
-                    "option": {
-                        "optionID": "O10",
-                        "optionText": "Im good",
-                        "barvalue": "-15",
-                        "response": "TOO BAD!",
-                        "nextQuestionID": "Q65",
-                        "optionImage": "src\\main\\resources\\images\\gatordoorclosed.png"
-                    }
-                }
-            ]
-        }
+    
+   
     }, {
         "question": {
             "questionID": "Q65",
